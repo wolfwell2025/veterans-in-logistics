@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join | Veterans in Logistics</title>
+  <meta name="description" content="Request review of your veteran resume and logistics profile. MOS, clearance, CDL, preferred roles, and locations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="Veterans in Logistics home">
+        <img src="assets/img/logo.svg" alt="" width="36" height="36" />
+        <span class="logo-text"><span>Veterans</span><span>In Logistics</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+      </button>
+      <nav class="nav" id="site-nav">
+        <div class="nav-links">
+          <a href="index.html#mission">Mission</a>
+          <a href="join.html" aria-current="page">Join</a>
+          <a href="index.html#impact">Impact</a>
+          <a href="founders.html">Founders</a>
+        </div>
+        <a class="btn btn-green" href="founders.html">Engage <span class="arrow" aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-label">Veterans · Join</p>
+        <h1 class="section-title">Submit Your Resume.</h1>
+        <p class="section-body">
+          Primary ask: share your resume and logistics profile so we can match you with companies that value
+          military-grade discipline. Human review before any outreach. Careers, not placements.
+        </p>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <div class="container form-layout">
+        <aside class="form-aside">
+          <h2>What we need</h2>
+          <p>
+            Tell us how you served, what roles you want, where you can work, and whether you hold a CDL or clearance.
+            Upload a PDF, DOC, or DOCX resume.
+          </p>
+          <ul>
+            <li>Reviewed by people who understand both military service and logistics hiring.</li>
+            <li>Matched against real job descriptions from sponsor companies.</li>
+            <li>You control the conversation. We never auto-apply for you.</li>
+          </ul>
+          <p style="margin-top:1.5rem;">
+            Questions? <a href="mailto:contact@veteransinlogistics.org" style="color:var(--green)">contact@veteransinlogistics.org</a>
+          </p>
+        </aside>
+
+        <div class="form-card">
+          <!--
+            Formspree-ready placeholder:
+            To enable hosted submissions later, set action to your Formspree endpoint, e.g.
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+              enctype="multipart/form-data"
+            and remove the JS mailto handler for #join-form (or keep mailto as fallback).
+            Do not invent API keys or form IDs here.
+          -->
+          <div class="success-panel" role="status" aria-live="polite"></div>
+          <form id="join-form" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="full_name">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input id="full_name" name="full_name" type="text" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="phone">Phone <span class="hint-inline">(optional)</span></label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" />
+              </div>
+              <div class="field">
+                <label for="branch">Branch / service <span class="req" aria-hidden="true">*</span></label>
+                <select id="branch" name="branch" required>
+                  <option value="">Select</option>
+                  <option>Army</option>
+                  <option>Navy</option>
+                  <option>Air Force</option>
+                  <option>Marine Corps</option>
+                  <option>Coast Guard</option>
+                  <option>Space Force</option>
+                  <option>National Guard / Reserve</option>
+                  <option>Other / Allied</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="mos">MOS or rating <span class="req" aria-hidden="true">*</span></label>
+                <input id="mos" name="mos" type="text" placeholder="e.g. 88M, LS, 2T2X1" required />
+              </div>
+              <div class="field">
+                <label for="years_of_service">Years of service <span class="req" aria-hidden="true">*</span></label>
+                <input id="years_of_service" name="years_of_service" type="text" inputmode="numeric" placeholder="e.g. 6" required />
+              </div>
+              <div class="field full">
+                <label>Preferred roles <span class="req" aria-hidden="true">*</span></label>
+                <p class="hint">Select all that apply.</p>
+                <div class="check-group" role="group" aria-label="Preferred roles">
+                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Driver / CDL" /> Driver / CDL</label>
+                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Warehouse / Ops" /> Warehouse / Ops</label>
+                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Dispatcher" /> Dispatcher</label>
+                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Fleet / Maintenance" /> Fleet / Maintenance</label>
+                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Supply Chain / Planning" /> Supply Chain / Planning</label>
+                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Safety / Compliance" /> Safety / Compliance</label>
+                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Leadership / Management" /> Leadership / Management</label>
+                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Sales / Brokerage" /> Sales / Brokerage</label>
+                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Other" /> Other</label>
+                </div>
+              </div>
+              <div class="field full">
+                <label for="locations">Locations willing to work <span class="req" aria-hidden="true">*</span></label>
+                <input id="locations" name="locations" type="text" placeholder="Cities, regions, or Remote / Relocate" required />
+              </div>
+              <div class="field">
+                <label>CDL <span class="req" aria-hidden="true">*</span></label>
+                <div class="radio-row" role="radiogroup" aria-label="CDL status">
+                  <label><input type="radio" name="cdl" value="Yes" required /> Yes</label>
+                  <label><input type="radio" name="cdl" value="No" /> No</label>
+                  <label><input type="radio" name="cdl" value="In progress" /> In progress</label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="clearance">Clearance <span class="hint-inline">(optional)</span></label>
+                <select id="clearance" name="clearance">
+                  <option value="">None / Prefer not to say</option>
+                  <option>Confidential</option>
+                  <option>Secret</option>
+                  <option>Top Secret</option>
+                  <option>TS/SCI</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="linkedin">LinkedIn URL <span class="hint-inline">(optional)</span></label>
+                <input id="linkedin" name="linkedin" type="url" placeholder="https://www.linkedin.com/in/..." />
+              </div>
+              <div class="field full">
+                <label for="resume">Resume file <span class="req" aria-hidden="true">*</span></label>
+                <p class="hint">Accepts PDF, DOC, or DOCX. You will attach this file in your email client after submit.</p>
+                <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required />
+              </div>
+              <div class="field full">
+                <label for="note">Short note <span class="hint-inline">(optional)</span></label>
+                <textarea id="note" name="note" placeholder="Anything we should know about your transition timeline or goals?"></textarea>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-green btn-lg btn-block" type="submit">
+                Request Resume Review
+                <span class="arrow" aria-hidden="true">→</span>
+              </button>
+              <p class="form-note">
+                Submit opens your email client with a summary to contact@veteransinlogistics.org.
+                Attach your resume before sending. Field values are also saved locally so we can follow up.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/img/logo-mark.svg" alt="" width="22" height="22" />
+        <span>Veterans in Logistics © 2026</span>
+      </div>
+      <span>Built with precision. Driven by purpose.</span>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

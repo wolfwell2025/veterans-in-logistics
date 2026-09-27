@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sponsor | Veterans in Logistics</title>
+  <meta name="description" content="Share job descriptions and sponsor interest. Hire mission-ready veterans into logistics careers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="Veterans in Logistics home">
+        <img src="assets/img/logo.svg" alt="" width="36" height="36" />
+        <span class="logo-text"><span>Veterans</span><span>In Logistics</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+      </button>
+      <nav class="nav" id="site-nav">
+        <div class="nav-links">
+          <a href="index.html#mission">Mission</a>
+          <a href="join.html">Join</a>
+          <a href="index.html#impact">Impact</a>
+          <a href="founders.html">Founders</a>
+        </div>
+        <a class="btn btn-green" href="founders.html">Engage <span class="arrow" aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-label">Companies · Sponsor</p>
+        <h1 class="section-title">Share a Job Description.</h1>
+        <p class="section-body">
+          Invest in the workforce the industry actually needs. Send us open roles. We match strong veteran
+          profiles, then involve humans before any outreach.
+        </p>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <div class="container form-layout">
+        <aside class="form-aside">
+          <h2>How sponsorship works</h2>
+          <p>
+            Start with a role. Add sponsor interest if you want deeper partnership on recruiting, development,
+            or retention programs.
+          </p>
+          <ul>
+            <li>Paste a JD or link to a public posting.</li>
+            <li>Mark veteran-friendly requirements so we prioritize the right fits.</li>
+            <li>We review both sides before introductions.</li>
+          </ul>
+          <p style="margin-top:1.5rem;">
+            Contact: <a href="mailto:contact@veteransinlogistics.org" style="color:var(--green)">contact@veteransinlogistics.org</a>
+          </p>
+        </aside>
+
+        <div class="form-card">
+          <!--
+            Formspree-ready placeholder:
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+            Swap in a real endpoint when ready. No credentials inventing.
+          -->
+          <div class="success-panel" role="status" aria-live="polite"></div>
+          <form id="sponsor-form" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="company_name">Company name <span class="req" aria-hidden="true">*</span></label>
+                <input id="company_name" name="company_name" type="text" autocomplete="organization" required />
+              </div>
+              <div class="field">
+                <label for="contact_name">Contact name <span class="req" aria-hidden="true">*</span></label>
+                <input id="contact_name" name="contact_name" type="text" autocomplete="name" required />
+              </div>
+              <div class="field full">
+                <label for="contact_email">Contact email <span class="req" aria-hidden="true">*</span></label>
+                <input id="contact_email" name="contact_email" type="email" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="role_title">Role title <span class="req" aria-hidden="true">*</span></label>
+                <input id="role_title" name="role_title" type="text" placeholder="e.g. Fleet Supervisor" required />
+              </div>
+              <div class="field">
+                <label for="location">Location <span class="req" aria-hidden="true">*</span></label>
+                <input id="location" name="location" type="text" placeholder="City, ST or Remote" required />
+              </div>
+              <div class="field full">
+                <label for="jd_url">Job description URL <span class="hint-inline">(optional)</span></label>
+                <input id="jd_url" name="jd_url" type="url" placeholder="https://..." />
+              </div>
+              <div class="field full">
+                <label for="jd_text">Job description text <span class="hint-inline">(optional if URL provided)</span></label>
+                <textarea id="jd_text" name="jd_text" placeholder="Paste key requirements, duties, and compensation range if available."></textarea>
+              </div>
+              <div class="field full">
+                <label class="check-pill" style="width:fit-content;">
+                  <input type="checkbox" name="veteran_friendly" value="yes" />
+                  This role is veteran-friendly (military experience valued)
+                </label>
+              </div>
+              <div class="field full">
+                <label for="sponsor_notes">Sponsor interest notes <span class="hint-inline">(optional)</span></label>
+                <textarea id="sponsor_notes" name="sponsor_notes" placeholder="Hiring goals, volume, summit interest, or scholarship support."></textarea>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-green btn-lg btn-block" type="submit">
+                Send Job Description
+                <span class="arrow" aria-hidden="true">→</span>
+              </button>
+              <p class="form-note">
+                Submit opens your email client with a summary to contact@veteransinlogistics.org.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/img/logo-mark.svg" alt="" width="22" height="22" />
+        <span>Veterans in Logistics © 2026</span>
+      </div>
+      <span>Built with precision. Driven by purpose.</span>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

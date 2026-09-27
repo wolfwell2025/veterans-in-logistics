@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Founders | Veterans in Logistics</title>
+  <meta name="description" content="Apply for founding membership. Shape governance, scholarships, and the legacy of Veterans in Logistics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="Veterans in Logistics home">
+        <img src="assets/img/logo.svg" alt="" width="36" height="36" />
+        <span class="logo-text"><span>Veterans</span><span>In Logistics</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+      </button>
+      <nav class="nav" id="site-nav">
+        <div class="nav-links">
+          <a href="index.html#mission">Mission</a>
+          <a href="join.html">Join</a>
+          <a href="index.html#impact">Impact</a>
+          <a href="founders.html" aria-current="page">Founders</a>
+        </div>
+        <a class="btn btn-green" href="#founders-form">Engage <span class="arrow" aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-label">Founding Members · Engage</p>
+        <h1 class="section-title">Claim Your Position.</h1>
+        <p class="section-body">
+          Only 25 founding member seats. 18 remain open. Shape organizational direction, influence scholarship
+          and certification programs, and carry lifetime executive access and legacy recognition.
+        </p>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <div class="container form-layout">
+        <aside class="form-aside">
+          <h2>Founding benefits</h2>
+          <ul>
+            <li>National recognition and media integration</li>
+            <li>Governance and advisory rights</li>
+            <li>Priority Summit access</li>
+            <li>Named on founding documents</li>
+          </ul>
+          <p style="margin-top:1.5rem;">
+            Prefer email? Write <a href="mailto:contact@veteransinlogistics.org" style="color:var(--green)">contact@veteransinlogistics.org</a>
+          </p>
+        </aside>
+
+        <div class="form-card">
+          <!--
+            Formspree-ready placeholder:
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+          -->
+          <div class="success-panel" role="status" aria-live="polite"></div>
+          <form id="founders-form" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="full_name">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input id="full_name" name="full_name" type="text" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="organization">Organization <span class="hint-inline">(optional)</span></label>
+                <input id="organization" name="organization" type="text" autocomplete="organization" />
+              </div>
+              <div class="field">
+                <label for="title">Role / title <span class="hint-inline">(optional)</span></label>
+                <input id="title" name="title" type="text" />
+              </div>
+              <div class="field full">
+                <label for="engagement">How you want to engage <span class="req" aria-hidden="true">*</span></label>
+                <select id="engagement" name="engagement" required>
+                  <option value="">Select</option>
+                  <option>Founding membership seat</option>
+                  <option>Corporate sponsorship + founding</option>
+                  <option>Advisory / governance interest</option>
+                  <option>Not sure yet. Tell me more</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="note">Note <span class="hint-inline">(optional)</span></label>
+                <textarea id="note" name="note" placeholder="Why this mission matters to you."></textarea>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-green btn-lg btn-block" type="submit">
+                Apply for Founding Membership
+                <span class="arrow" aria-hidden="true">↗</span>
+              </button>
+              <p class="form-note">
+                Submit opens your email client with a summary to contact@veteransinlogistics.org.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/img/logo-mark.svg" alt="" width="22" height="22" />
+        <span>Veterans in Logistics © 2026</span>
+      </div>
+      <span>Built with precision. Driven by purpose.</span>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
