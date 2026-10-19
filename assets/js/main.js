@@ -203,25 +203,9 @@
         return false;
       }
     }
-    var file = form.elements.namedItem("attachment");
-    if (file && file.files && file.files[0]) {
-      var f = file.files[0];
-      var max = parseInt(file.getAttribute("data-max-bytes") || "5242880", 10);
-      if (f.size > max) {
-        alert("Resume file is too large. Please keep it under 5MB, or share a link instead.");
-        return false;
-      }
-      if (!/\.(pdf|docx?|DOCX?|PDF)$/.test(f.name)) {
-        alert("Please upload a PDF, DOC, or DOCX file.");
-        return false;
-      }
-    }
-    if (form.id === "join-form") {
-      var hasFile = file && file.files && file.files.length;
-      if (!hasFile && !val(form, "resume_url")) {
-        alert("Please upload your resume or share a link to it.");
-        return false;
-      }
+    if (form.id === "join-form" && !val(form, "resume_url") && !val(form, "linkedin")) {
+      alert("Please share a link to your resume or your LinkedIn URL.");
+      return false;
     }
     if (form.id === "sponsor-form" && !val(form, "jd_url") && !val(form, "jd_text")) {
       alert("Please share a careers page or job link, or paste the job description.");
@@ -282,54 +266,13 @@
     window.location.href = mailto;
   }
 
-  function addHidden(form, name, value) {
-    var el = form.elements.namedItem(name);
-    if (!el || el.type !== "hidden") {
-      el = document.createElement("input");
-      el.type = "hidden";
-      el.name = name;
-      form.appendChild(el);
-    }
-    el.value = value;
-  }
-
-  function nativeSubmit(form) {
-    var groups = {};
-    form.querySelectorAll('input[type="checkbox"]').forEach(function (el) {
-      if (form.querySelectorAll('[name="' + el.name + '"]').length > 1) groups[el.name] = true;
-    });
-    Object.keys(groups).forEach(function (name) {
-      var joined = checkedValues(form, name).join(", ");
-      form.querySelectorAll('[name="' + name + '"]').forEach(function (el) {
-        el.disabled = true;
-      });
-      addHidden(form, name, joined);
-    });
-    var who = val(form, "full_name") || val(form, "company_name") || val(form, "email");
-    addHidden(form, "_subject", (form.getAttribute("data-subject") || "VIL submission") + ": " + who);
-    addHidden(form, "submitted_at", new Date().toISOString());
-    addHidden(form, "_next", window.location.origin + window.location.pathname + "?submitted=1");
-    var btn = form.querySelector('button[type="submit"]');
-    if (btn) btn.disabled = true;
-    HTMLFormElement.prototype.submit.call(form);
-  }
-
   function wireForm(form, success) {
-    if (/[?&]submitted=1\b/.test(window.location.search)) {
-      showSuccess(form.closest(".form-card"), success.title, success.body, null, null);
-    }
     fillHidden(form);
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var honey = form.elements.namedItem("_honey");
       if (honey && honey.value) return; // bot
       if (!validate(form)) return;
-      var fileEl = form.elements.namedItem("attachment");
-      if (fileEl && fileEl.files && fileEl.files.length) {
-        // FormSubmit only accepts file attachments on a normal (non AJAX) post.
-        nativeSubmit(form);
-        return;
-      }
       var payload = buildPayload(form);
       var btn = form.querySelector('button[type="submit"]');
       var errBox = form.querySelector(".form-error");

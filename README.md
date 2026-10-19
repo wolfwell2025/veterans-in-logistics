@@ -15,8 +15,8 @@ Landing site rebuild for [veteransinlogistics.org](https://veteransinlogistics.o
 Submissions from `/join.html` and `/sponsor.html` go through [FormSubmit](https://formsubmit.co) (free, no account) and are emailed to john@bcsfreightnetwork.com.
 
 - Endpoint alias: `https://formsubmit.co/60f3451a7dabcabba92fca302f1c7296` (activated Oct 18, 2026 from the BCS inbox). The alias keeps the inbox address out of the page source.
-- No resume file: the form posts with `fetch` to the `/ajax/` endpoint and shows a success message in place. If the post fails, the page shows an error and opens a prefilled email to contact@veteransinlogistics.org as a fallback.
-- Resume file attached: FormSubmit only accepts files on a normal form post, so the page does a standard multipart post and FormSubmit redirects back to `?submitted=1`, which shows the success message. Max file size enforced in the browser is 5MB (PDF, DOC, DOCX).
+- Both forms post with `fetch` to the FormSubmit `/ajax/` endpoint and show a success message in place. If the post fails, the page shows an error and opens a prefilled email to contact@veteransinlogistics.org as a fallback.
+- Resumes: veterans share a resume link (Google Drive, Dropbox, OneDrive) or a LinkedIn URL, and one of the two is required. File upload was removed on Oct 18, 2026. FormSubmit drops files on its AJAX endpoint, and two test posts with a PDF through its standard multipart endpoint were accepted on screen but never delivered. Bring file upload back only with a backend that is confirmed to deliver attachments.
 - Spam: hidden honeypot field `_honey`. FormSubmit reCAPTCHA is turned off (`_captcha=false`) so the in-page flow works; turn it back on if spam shows up.
 - Tracking: hidden fields `form_name`, `page`, `utm_source`, `utm_medium`, `utm_campaign`, and `submitted_at` ride along with every submission.
 - Multi-select answers are sent as one comma-separated field.
