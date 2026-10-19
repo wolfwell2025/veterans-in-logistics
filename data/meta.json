@@ -1,17 +1,17 @@
 {
- "updated_at": "2026-10-19T01:31:01+00:00",
- "total_jobs": 1926,
+ "updated_at": "2026-10-19T11:03:21+00:00",
+ "total_jobs": 1927,
  "employers": [
   {
    "employer": "C.H. Robinson",
    "segment": "3PL / broker",
    "ats": "workday",
    "ok": true,
-   "reported_total": 167,
-   "fetched": 167,
+   "reported_total": 164,
+   "fetched": 164,
    "listed": 111,
    "duplicates_removed": 1,
-   "non_us_removed": 55
+   "non_us_removed": 52
   },
   {
    "employer": "RXO",
@@ -29,11 +29,11 @@
    "segment": "carrier / intermodal / brokerage",
    "ats": "workday",
    "ok": true,
-   "reported_total": 492,
-   "fetched": 492,
+   "reported_total": 491,
+   "fetched": 491,
    "listed": 431,
    "duplicates_removed": 59,
-   "non_us_removed": 2
+   "non_us_removed": 1
   },
   {
    "employer": "Werner Enterprises",
@@ -95,9 +95,9 @@
    "segment": "freight forwarder / freight tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 209,
-   "fetched": 209,
-   "listed": 76,
+   "reported_total": 210,
+   "fetched": 210,
+   "listed": 77,
    "duplicates_removed": 2,
    "non_us_removed": 131
   },
@@ -106,22 +106,22 @@
    "segment": "fleet tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 153,
-   "fetched": 153,
+   "reported_total": 152,
+   "fetched": 152,
    "listed": 72,
    "duplicates_removed": 2,
-   "non_us_removed": 79
+   "non_us_removed": 78
   },
   {
    "employer": "project44",
    "segment": "freight visibility tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 28,
-   "fetched": 28,
+   "reported_total": 27,
+   "fetched": 27,
    "listed": 5,
    "duplicates_removed": 0,
-   "non_us_removed": 23
+   "non_us_removed": 22
   },
   {
    "employer": "FourKites",
@@ -139,11 +139,11 @@
    "segment": "fleet tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 262,
-   "fetched": 262,
+   "reported_total": 264,
+   "fetched": 264,
    "listed": 168,
    "duplicates_removed": 8,
-   "non_us_removed": 86
+   "non_us_removed": 88
   },
   {
    "employer": "Arrive Logistics",
@@ -180,13 +180,13 @@
   }
  ],
  "categories": {
+  "tech_data": 171,
   "management": 447,
   "other": 231,
   "dispatch_operations": 259,
   "warehouse_dock": 139,
   "maintenance_technician": 233,
   "brokerage_sales": 369,
-  "tech_data": 170,
   "driving_cdl": 78
  },
  "category_labels": {
