@@ -7,6 +7,8 @@ Landing site rebuild for [veteransinlogistics.org](https://veteransinlogistics.o
 - `/` home
 - `/join.html` veteran signup and resume intake
 - `/sponsor.html` company jobs and sponsorship form
+- `/jobs.html` live logistics jobs with search, filters, and pagination
+- `/mos.html` military job code lookup (MOS, AFSC, rating) with matching live jobs
 - `/founders.html` founding seats interest (still uses a mailto link)
 - `/engage.html` redirects to founders
 
@@ -22,6 +24,30 @@ Submissions from `/join.html` and `/sponsor.html` go through [FormSubmit](https:
 - Multi-select answers are sent as one comma-separated field.
 - The page sets `<meta name="referrer" content="no-referrer-when-downgrade">` because the preview host sends `Referrer-Policy: no-referrer` and FormSubmit rejects posts with no referrer.
 - Optional: FormSubmit supports a free `_webhook` field that can call a Google Apps Script web app to log each submission to a Google Sheet. Not set up yet.
+
+## Jobs data
+
+`scripts/build_jobs.py` (Python 3 standard library only) reads the public job-posting feeds in `scripts/feeds.json` and writes:
+
+- `data/jobs.json`: one record per US job with `title`, `employer`, `location`, `city`, `state`, `remote`, `category`, `cdl`, `onet`, `posted`, and `url` (the employer's own apply page).
+- `data/meta.json`: `updated_at`, total count, and per-employer stats (fetched, listed, duplicates removed, non-US removed).
+
+Feeds: Workday CXS (C.H. Robinson, RXO, J.B. Hunt, Werner, Old Dominion, Ryder, Triumph Financial), Greenhouse Job Board API (Uber Freight, Flexport, Motive, project44, FourKites, Samsara), Lever (Arrive Logistics, Loadsmart), and Ashby (Flock Freight). Amazon's jobs search JSON is listed but disabled because it is not an official API.
+
+Rules: public feeds only, one request at a time with a 1 second pause, identifying User-Agent, no candidate data. Jobs outside the US are dropped. Duplicates are removed by URL and by employer, title, and location. If a feed fails, the previous run's jobs for that employer are kept. Category, CDL, and O*NET tags come from simple title and description rules, so expect some misses.
+
+Run it: `python3 scripts/build_jobs.py` (about 3 minutes).
+
+### Daily refresh
+
+- GitHub Actions: `.github/workflows/refresh-jobs.yml` runs daily at 11:15 UTC (6:15 AM Central in daylight time, 5:15 AM in winter) and commits new data. Pushing this file needs a token with the `workflow` scope.
+- Box preview: `scripts/refresh_and_publish.sh` pulls the feeds, republishes the here.now preview, and commits the data.
+
+## MOS lookup
+
+`scripts/build_mos.py` builds `data/mos.json` (about 75 KB) from the O*NET Military Crosswalk (July 2024, public download from onetcenter.org). It keeps only active codes that map to logistics occupations (drivers, vehicle mechanics, material movers, shipping and inventory clerks, dispatchers, cargo agents, logisticians, purchasing, and transportation supervisors and managers). The page matches a code to those occupations, then to live jobs by O*NET code (direct) and by category (related). Air Force codes accept an X for the skill level, such as 2T1X1.
+
+`join.html` accepts prefill params: `branch`, `status`, `mos_code`, `mos_title`, `cdl_status`, `city_state`.
 
 ## UTM tracking
 

@@ -1,0 +1,22 @@
+{
+  "_note": "Public, unauthenticated job-posting feeds verified live on 2026-10-18. Job postings only, no personal data. Polled politely (1 request per second, identifying User-Agent).",
+  "feeds": [
+    {"employer": "C.H. Robinson", "segment": "3PL / broker", "ats": "workday", "host": "chrobinson.wd5.myworkdayjobs.com", "tenant": "chrobinson", "site": "CHRobinson", "us_default": true},
+    {"employer": "RXO", "segment": "broker / managed transportation", "ats": "workday", "host": "rxo.wd501.myworkdayjobs.com", "tenant": "rxo", "site": "rxojobs", "us_default": true},
+    {"employer": "J.B. Hunt", "segment": "carrier / intermodal / brokerage", "ats": "workday", "host": "jbhunt.wd501.myworkdayjobs.com", "tenant": "jbhunt", "site": "Careers", "us_default": true},
+    {"employer": "Werner Enterprises", "segment": "truckload carrier", "ats": "workday", "host": "werner.wd501.myworkdayjobs.com", "tenant": "werner", "site": "Werner", "us_default": true},
+    {"employer": "Old Dominion Freight Line", "segment": "LTL carrier", "ats": "workday", "host": "odfl.wd1.myworkdayjobs.com", "tenant": "odfl", "site": "ODFL_Careers", "us_default": true},
+    {"employer": "Ryder", "segment": "fleet / dedicated / supply chain", "ats": "workday", "host": "ryder.wd5.myworkdayjobs.com", "tenant": "ryder", "site": "RyderCareers", "us_default": true},
+    {"employer": "Triumph Financial", "segment": "freight payments / factoring", "ats": "workday", "host": "tbkbank.wd1.myworkdayjobs.com", "tenant": "tbkbank", "site": "tfin", "us_default": true},
+    {"employer": "Uber Freight", "segment": "digital broker / freight tech", "ats": "greenhouse", "board": "uberfreight"},
+    {"employer": "Flexport", "segment": "freight forwarder / freight tech", "ats": "greenhouse", "board": "flexport"},
+    {"employer": "Motive", "segment": "fleet tech", "ats": "greenhouse", "board": "gomotive"},
+    {"employer": "project44", "segment": "freight visibility tech", "ats": "greenhouse", "board": "project44"},
+    {"employer": "FourKites", "segment": "freight visibility tech", "ats": "greenhouse", "board": "fourkites"},
+    {"employer": "Samsara", "segment": "fleet tech", "ats": "greenhouse", "board": "samsara"},
+    {"employer": "Arrive Logistics", "segment": "broker", "ats": "lever", "board": "arrivelogistics"},
+    {"employer": "Loadsmart", "segment": "digital broker / freight tech", "ats": "lever", "board": "loadsmart"},
+    {"employer": "Flock Freight", "segment": "broker / shared truckload", "ats": "ashby", "board": "flock"},
+    {"employer": "Amazon", "segment": "logistics / transportation", "ats": "amazon", "enabled": false, "_note": "amazon.jobs search.json is public but not an official API. Disabled until John decides."}
+  ]
+}

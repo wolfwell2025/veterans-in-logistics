@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MOS Lookup | Veterans in Logistics</title>
+  <meta name="description" content="Match your MOS, AFSC, or rating to civilian logistics jobs and live openings." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="Veterans in Logistics home">
+        <img src="assets/img/logo.svg" alt="" width="36" height="36" />
+        <span class="logo-text"><span>Veterans</span><span>In Logistics</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <div class="nav-links">
+          <a href="index.html#mission">Mission</a>
+          <a href="join.html">Join</a>
+          <a href="jobs.html">Jobs</a>
+          <a href="mos.html" aria-current="page">MOS Lookup</a>
+          <a href="index.html#impact">Impact</a>
+          <a href="founders.html">Founders</a>
+        </div>
+        <a class="btn btn-green" href="founders.html">Engage <span class="arrow" aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-label">Veterans · MOS Lookup</p>
+        <h1 class="section-title">Your Code. Civilian Jobs.</h1>
+        <p class="section-body">
+          Pick your branch and enter your MOS, AFSC, or rating. We show the civilian logistics jobs it lines up with and the
+          live openings that fit.
+        </p>
+      </div>
+    </section>
+
+    <section class="jobs-section">
+      <div class="container">
+        <form class="filter-bar mos-form" id="mos-form" role="search" aria-label="Military job code lookup">
+          <div class="field">
+            <label for="m-branch">Branch</label>
+            <select id="m-branch" name="branch" required>
+              <option value="Army">Army</option>
+              <option value="Navy">Navy</option>
+              <option value="Air Force">Air Force</option>
+              <option value="Marine Corps">Marine Corps</option>
+              <option value="Coast Guard">Coast Guard</option>
+              <option value="Space Force">Space Force</option>
+            </select>
+          </div>
+          <div class="field filter-search">
+            <label for="m-code">Military job code or title</label>
+            <input id="m-code" name="code" type="text" placeholder="e.g. 88M, 92Y, LS, 3531, 2T1X1, or Motor Transport" autocomplete="off" required />
+          </div>
+          <div class="field mos-submit">
+            <span class="filter-checks-label" aria-hidden="true">&nbsp;</span>
+            <button class="btn btn-green" type="submit">Look Up <span class="arrow" aria-hidden="true">→</span></button>
+          </div>
+        </form>
+        <p class="hint mos-hint">Guard and Reserve: choose your parent branch. Air Force codes work with an X for the skill level, like 2T1X1.</p>
+        <div id="mos-result" aria-live="polite"></div>
+        <p class="jobs-source">Military to civilian mapping: O*NET Military Crosswalk (July 2024) from the O*NET Resource Center, filtered to logistics occupations. Job matches use title keywords and are a starting point, not a guarantee of fit.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/img/logo-mark.svg" alt="" width="22" height="22" />
+        <span>Veterans in Logistics © 2026</span>
+      </div>
+      <span>Built with precision. Driven by purpose.</span>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/jobs.js"></script>
+</body>
+</html>

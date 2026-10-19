@@ -1,0 +1,206 @@
+{
+ "updated_at": "2026-10-19T01:31:01+00:00",
+ "total_jobs": 1926,
+ "employers": [
+  {
+   "employer": "C.H. Robinson",
+   "segment": "3PL / broker",
+   "ats": "workday",
+   "ok": true,
+   "reported_total": 167,
+   "fetched": 167,
+   "listed": 111,
+   "duplicates_removed": 1,
+   "non_us_removed": 55
+  },
+  {
+   "employer": "RXO",
+   "segment": "broker / managed transportation",
+   "ats": "workday",
+   "ok": true,
+   "reported_total": 348,
+   "fetched": 348,
+   "listed": 261,
+   "duplicates_removed": 61,
+   "non_us_removed": 26
+  },
+  {
+   "employer": "J.B. Hunt",
+   "segment": "carrier / intermodal / brokerage",
+   "ats": "workday",
+   "ok": true,
+   "reported_total": 492,
+   "fetched": 492,
+   "listed": 431,
+   "duplicates_removed": 59,
+   "non_us_removed": 2
+  },
+  {
+   "employer": "Werner Enterprises",
+   "segment": "truckload carrier",
+   "ats": "workday",
+   "ok": true,
+   "reported_total": 83,
+   "fetched": 83,
+   "listed": 78,
+   "duplicates_removed": 5,
+   "non_us_removed": 0
+  },
+  {
+   "employer": "Old Dominion Freight Line",
+   "segment": "LTL carrier",
+   "ats": "workday",
+   "ok": true,
+   "reported_total": 227,
+   "fetched": 227,
+   "listed": 222,
+   "duplicates_removed": 5,
+   "non_us_removed": 0
+  },
+  {
+   "employer": "Ryder",
+   "segment": "fleet / dedicated / supply chain",
+   "ats": "workday",
+   "ok": true,
+   "reported_total": 448,
+   "fetched": 448,
+   "listed": 363,
+   "duplicates_removed": 27,
+   "non_us_removed": 58
+  },
+  {
+   "employer": "Triumph Financial",
+   "segment": "freight payments / factoring",
+   "ats": "workday",
+   "ok": true,
+   "reported_total": 20,
+   "fetched": 20,
+   "listed": 20,
+   "duplicates_removed": 0,
+   "non_us_removed": 0
+  },
+  {
+   "employer": "Uber Freight",
+   "segment": "digital broker / freight tech",
+   "ats": "greenhouse",
+   "ok": true,
+   "reported_total": 73,
+   "fetched": 73,
+   "listed": 49,
+   "duplicates_removed": 0,
+   "non_us_removed": 24
+  },
+  {
+   "employer": "Flexport",
+   "segment": "freight forwarder / freight tech",
+   "ats": "greenhouse",
+   "ok": true,
+   "reported_total": 209,
+   "fetched": 209,
+   "listed": 76,
+   "duplicates_removed": 2,
+   "non_us_removed": 131
+  },
+  {
+   "employer": "Motive",
+   "segment": "fleet tech",
+   "ats": "greenhouse",
+   "ok": true,
+   "reported_total": 153,
+   "fetched": 153,
+   "listed": 72,
+   "duplicates_removed": 2,
+   "non_us_removed": 79
+  },
+  {
+   "employer": "project44",
+   "segment": "freight visibility tech",
+   "ats": "greenhouse",
+   "ok": true,
+   "reported_total": 28,
+   "fetched": 28,
+   "listed": 5,
+   "duplicates_removed": 0,
+   "non_us_removed": 23
+  },
+  {
+   "employer": "FourKites",
+   "segment": "freight visibility tech",
+   "ats": "greenhouse",
+   "ok": true,
+   "reported_total": 14,
+   "fetched": 14,
+   "listed": 7,
+   "duplicates_removed": 0,
+   "non_us_removed": 7
+  },
+  {
+   "employer": "Samsara",
+   "segment": "fleet tech",
+   "ats": "greenhouse",
+   "ok": true,
+   "reported_total": 262,
+   "fetched": 262,
+   "listed": 168,
+   "duplicates_removed": 8,
+   "non_us_removed": 86
+  },
+  {
+   "employer": "Arrive Logistics",
+   "segment": "broker",
+   "ats": "lever",
+   "ok": true,
+   "reported_total": 68,
+   "fetched": 68,
+   "listed": 58,
+   "duplicates_removed": 0,
+   "non_us_removed": 10
+  },
+  {
+   "employer": "Loadsmart",
+   "segment": "digital broker / freight tech",
+   "ats": "lever",
+   "ok": true,
+   "reported_total": 12,
+   "fetched": 12,
+   "listed": 5,
+   "duplicates_removed": 0,
+   "non_us_removed": 7
+  },
+  {
+   "employer": "Flock Freight",
+   "segment": "broker / shared truckload",
+   "ats": "ashby",
+   "ok": true,
+   "reported_total": 9,
+   "fetched": 9,
+   "listed": 0,
+   "duplicates_removed": 0,
+   "non_us_removed": 9
+  }
+ ],
+ "categories": {
+  "management": 447,
+  "other": 231,
+  "dispatch_operations": 259,
+  "warehouse_dock": 139,
+  "maintenance_technician": 233,
+  "brokerage_sales": 369,
+  "tech_data": 170,
+  "driving_cdl": 78
+ },
+ "category_labels": {
+  "driving_cdl": "Driving / CDL",
+  "maintenance_technician": "Maintenance / Technician",
+  "warehouse_dock": "Warehouse / Dock",
+  "dispatch_operations": "Dispatch / Operations",
+  "brokerage_sales": "Brokerage / Sales",
+  "tech_data": "Tech / Data",
+  "management": "Management",
+  "other": "Other"
+ },
+ "cdl_jobs": 72,
+ "remote_jobs": 246,
+ "feeds_failed": 0,
+ "source_note": "Public job-posting feeds from each employer's own careers site. Apply links go to the employer."
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jobs | Veterans in Logistics</title>
+  <meta name="description" content="Live logistics job openings from employer career sites. Filter by state, category, CDL, and remote." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="Veterans in Logistics home">
+        <img src="assets/img/logo.svg" alt="" width="36" height="36" />
+        <span class="logo-text"><span>Veterans</span><span>In Logistics</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <div class="nav-links">
+          <a href="index.html#mission">Mission</a>
+          <a href="join.html">Join</a>
+          <a href="jobs.html" aria-current="page">Jobs</a>
+          <a href="mos.html">MOS Lookup</a>
+          <a href="index.html#impact">Impact</a>
+          <a href="founders.html">Founders</a>
+        </div>
+        <a class="btn btn-green" href="founders.html">Engage <span class="arrow" aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-label">Veterans · Jobs</p>
+        <h1 class="section-title">Logistics Jobs.</h1>
+        <p class="section-body">
+          Open roles pulled every day from logistics employers' own career sites. Every listing links to the employer's
+          page, so you apply directly with them.
+        </p>
+        <p class="jobs-meta"><span id="jobs-updated">Loading jobs...</span> · <a href="mos.html">Find jobs for your military job code</a></p>
+      </div>
+    </section>
+
+    <section class="jobs-section">
+      <div class="container">
+        <form class="filter-bar" id="job-filters" role="search" aria-label="Filter jobs">
+          <div class="field filter-search">
+            <label for="f-q">Search</label>
+            <input id="f-q" name="q" type="search" placeholder="Title, employer, or city" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="f-cat">Category</label>
+            <select id="f-cat" name="cat"><option value="">All categories</option></select>
+          </div>
+          <div class="field">
+            <label for="f-state">State</label>
+            <select id="f-state" name="state"><option value="">All states</option></select>
+          </div>
+          <div class="field">
+            <label for="f-emp">Employer</label>
+            <select id="f-emp" name="emp"><option value="">All employers</option></select>
+          </div>
+          <div class="field filter-checks">
+            <span class="filter-checks-label">Options</span>
+            <div class="check-group">
+              <label class="check-pill"><input type="checkbox" name="cdl" value="1" id="f-cdl" /> CDL required</label>
+              <label class="check-pill"><input type="checkbox" name="remote" value="1" id="f-remote" /> Remote</label>
+            </div>
+          </div>
+          <button class="sr-only" type="submit">Search jobs</button>
+        </form>
+        <div class="results-bar">
+          <p class="results-count" id="results-count" aria-live="polite"></p>
+          <button class="btn btn-outline-light btn-sm" type="button" id="f-clear">Clear filters</button>
+        </div>
+        <p class="soc-note" id="soc-note" hidden></p>
+        <ol class="job-list" id="job-list"></ol>
+        <nav class="pager" id="pager" aria-label="Job results pages"></nav>
+        <div class="cta-card">
+          <div>
+            <h2>Get matched.</h2>
+            <p>Tell us how you served and what you want next. A person reviews every profile and introduces you to employers hiring for your skills.</p>
+          </div>
+          <a class="btn btn-green btn-lg" href="join.html">Get Matched <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <p class="jobs-source" id="jobs-source"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/img/logo-mark.svg" alt="" width="22" height="22" />
+        <span>Veterans in Logistics © 2026</span>
+      </div>
+      <span>Built with precision. Driven by purpose.</span>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/jobs.js"></script>
+</body>
+</html>

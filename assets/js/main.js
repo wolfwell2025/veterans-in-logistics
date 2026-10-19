@@ -309,8 +309,28 @@
     });
   }
 
+  // Prefill join fields from the URL, for example join.html?branch=Army&mos_code=88M (used by the MOS lookup).
+  function prefillFromQuery(form) {
+    var params = new URLSearchParams(window.location.search);
+    ["branch", "status", "mos_code", "mos_title", "cdl_status", "city_state"].forEach(function (name) {
+      var v = params.get(name);
+      var field = form.elements.namedItem(name);
+      if (!v || !field || field.value) return;
+      v = v.slice(0, 120);
+      if (field.tagName === "SELECT") {
+        var opt = Array.prototype.find.call(field.options, function (o) {
+          return (o.value || o.text).toLowerCase() === v.toLowerCase();
+        });
+        if (opt) field.value = opt.value || opt.text;
+      } else {
+        field.value = v;
+      }
+    });
+  }
+
   var joinForm = document.getElementById("join-form");
   if (joinForm) {
+    prefillFromQuery(joinForm);
     wireForm(joinForm, {
       title: "Profile received",
       body: [
