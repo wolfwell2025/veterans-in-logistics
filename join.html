@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Join | Veterans in Logistics</title>
   <meta name="description" content="Request review of your veteran resume and logistics profile. MOS, clearance, CDL, preferred roles, and locations." />
@@ -51,7 +52,7 @@
           <h2>What we need</h2>
           <p>
             Tell us how you served, what roles you want, where you can work, and whether you hold a CDL or clearance.
-            Upload a PDF, DOC, or DOCX resume.
+            Upload a PDF, DOC, or DOCX resume (max 5MB) or share a link to it.
           </p>
           <ul>
             <li>Reviewed by people who understand both military service and logistics hiring.</li>
@@ -64,18 +65,23 @@
         </aside>
 
         <div class="form-card">
-          <!--
-            Formspree-ready placeholder:
-            To enable hosted submissions later, set action to your Formspree endpoint, e.g.
-              action="https://formspree.io/f/YOUR_FORM_ID"
-              method="POST"
-              enctype="multipart/form-data"
-            and remove the JS mailto handler for #join-form (or keep mailto as fallback).
-            Do not invent API keys or form IDs here.
-          -->
           <div class="success-panel" role="status" aria-live="polite"></div>
-          <form id="join-form" novalidate>
+          <form id="join-form" action="https://formsubmit.co/60f3451a7dabcabba92fca302f1c7296" method="POST" enctype="multipart/form-data" data-form="join" data-subject="VIL veteran signup" novalidate>
+            <input type="hidden" name="_subject" value="VIL veteran signup" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="form_name" value="join" />
+            <input type="hidden" name="page" value="" />
+            <input type="hidden" name="utm_source" value="" />
+            <input type="hidden" name="utm_medium" value="" />
+            <input type="hidden" name="utm_campaign" value="" />
+            <div class="hp-field" aria-hidden="true">
+              <label for="join_honey">Leave this field empty</label>
+              <input id="join_honey" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+            </div>
+
             <div class="form-grid">
+              <h3 class="form-subhead">About you</h3>
               <div class="field">
                 <label for="full_name">Full name <span class="req" aria-hidden="true">*</span></label>
                 <input id="full_name" name="full_name" type="text" autocomplete="name" required />
@@ -89,7 +95,13 @@
                 <input id="phone" name="phone" type="tel" autocomplete="tel" />
               </div>
               <div class="field">
-                <label for="branch">Branch / service <span class="req" aria-hidden="true">*</span></label>
+                <label for="city_state">City, state <span class="req" aria-hidden="true">*</span></label>
+                <input id="city_state" name="city_state" type="text" autocomplete="address-level2" placeholder="e.g. Killeen, TX" required />
+              </div>
+
+              <h3 class="form-subhead">Service</h3>
+              <div class="field">
+                <label for="branch">Branch <span class="req" aria-hidden="true">*</span></label>
                 <select id="branch" name="branch" required>
                   <option value="">Select</option>
                   <option>Army</option>
@@ -99,77 +111,175 @@
                   <option>Coast Guard</option>
                   <option>Space Force</option>
                   <option>National Guard / Reserve</option>
-                  <option>Other / Allied</option>
                 </select>
               </div>
               <div class="field">
-                <label for="mos">MOS or rating <span class="req" aria-hidden="true">*</span></label>
-                <input id="mos" name="mos" type="text" placeholder="e.g. 88M, LS, 2T2X1" required />
+                <label for="status">Status <span class="req" aria-hidden="true">*</span></label>
+                <select id="status" name="status" required>
+                  <option value="">Select</option>
+                  <option>Active duty, transitioning</option>
+                  <option>Veteran</option>
+                  <option>Guard / Reserve</option>
+                  <option>Military spouse</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="separation_date">Separation or ETS date <span class="hint-inline">(optional)</span></label>
+                <input id="separation_date" name="separation_date" type="month" />
               </div>
               <div class="field">
                 <label for="years_of_service">Years of service <span class="req" aria-hidden="true">*</span></label>
-                <input id="years_of_service" name="years_of_service" type="text" inputmode="numeric" placeholder="e.g. 6" required />
-              </div>
-              <div class="field full">
-                <label>Preferred roles <span class="req" aria-hidden="true">*</span></label>
-                <p class="hint">Select all that apply.</p>
-                <div class="check-group" role="group" aria-label="Preferred roles">
-                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Driver / CDL" /> Driver / CDL</label>
-                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Warehouse / Ops" /> Warehouse / Ops</label>
-                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Dispatcher" /> Dispatcher</label>
-                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Fleet / Maintenance" /> Fleet / Maintenance</label>
-                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Supply Chain / Planning" /> Supply Chain / Planning</label>
-                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Safety / Compliance" /> Safety / Compliance</label>
-                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Leadership / Management" /> Leadership / Management</label>
-                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Sales / Brokerage" /> Sales / Brokerage</label>
-                  <label class="check-pill"><input type="checkbox" name="preferred_roles" value="Other" /> Other</label>
-                </div>
-              </div>
-              <div class="field full">
-                <label for="locations">Locations willing to work <span class="req" aria-hidden="true">*</span></label>
-                <input id="locations" name="locations" type="text" placeholder="Cities, regions, or Remote / Relocate" required />
+                <input id="years_of_service" name="years_of_service" type="number" min="0" max="45" step="1" inputmode="numeric" placeholder="e.g. 6" required />
               </div>
               <div class="field">
-                <label>CDL <span class="req" aria-hidden="true">*</span></label>
-                <div class="radio-row" role="radiogroup" aria-label="CDL status">
-                  <label><input type="radio" name="cdl" value="Yes" required /> Yes</label>
-                  <label><input type="radio" name="cdl" value="No" /> No</label>
-                  <label><input type="radio" name="cdl" value="In progress" /> In progress</label>
-                </div>
+                <label for="mos_code">MOS / AFSC / rating code <span class="req" aria-hidden="true">*</span></label>
+                <input id="mos_code" name="mos_code" type="text" placeholder="e.g. 88M, 2T2X1, LS" required />
               </div>
               <div class="field">
-                <label for="clearance">Clearance <span class="hint-inline">(optional)</span></label>
+                <label for="mos_title">Job title in service <span class="hint-inline">(optional)</span></label>
+                <input id="mos_title" name="mos_title" type="text" placeholder="e.g. Motor Transport Operator" />
+              </div>
+              <div class="field">
+                <label for="pay_grade">Pay grade <span class="hint-inline">(optional)</span></label>
+                <select id="pay_grade" name="pay_grade">
+                  <option value="">Select</option>
+                  <option>E-1 to E-3</option>
+                  <option>E-4</option>
+                  <option>E-5</option>
+                  <option>E-6</option>
+                  <option>E-7</option>
+                  <option>E-8 to E-9</option>
+                  <option>W-1 to W-5</option>
+                  <option>O-1 to O-3</option>
+                  <option>O-4 to O-6</option>
+                  <option>O-7 and above</option>
+                  <option>Not applicable</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="clearance">Security clearance <span class="hint-inline">(optional)</span></label>
                 <select id="clearance" name="clearance">
                   <option value="">None / Prefer not to say</option>
                   <option>Confidential</option>
                   <option>Secret</option>
                   <option>Top Secret</option>
                   <option>TS/SCI</option>
-                  <option>Other</option>
+                  <option>Expired or inactive</option>
                 </select>
               </div>
+
+              <h3 class="form-subhead">Licenses</h3>
+              <div class="field">
+                <label for="cdl_status">CDL status <span class="req" aria-hidden="true">*</span></label>
+                <select id="cdl_status" name="cdl_status" required>
+                  <option value="">Select</option>
+                  <option>None</option>
+                  <option>Permit (CLP)</option>
+                  <option>Class A</option>
+                  <option>Class B</option>
+                  <option>Class C</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cdl_endorsements">CDL endorsements <span class="hint-inline">(optional)</span></label>
+                <input id="cdl_endorsements" name="cdl_endorsements" type="text" placeholder="e.g. H, N, T, X, Tanker, Hazmat" />
+              </div>
+
+              <h3 class="form-subhead">What you want</h3>
+              <div class="field full">
+                <label id="interests_label">Interests <span class="req" aria-hidden="true">*</span></label>
+                <p class="hint">Select all that apply.</p>
+                <div class="check-group" role="group" aria-labelledby="interests_label" data-required-group="interests">
+                  <label class="check-pill"><input type="checkbox" name="interests" value="Driving" /> Driving</label>
+                  <label class="check-pill"><input type="checkbox" name="interests" value="Dispatch / operations" /> Dispatch / operations</label>
+                  <label class="check-pill"><input type="checkbox" name="interests" value="Freight brokerage / sales" /> Freight brokerage / sales</label>
+                  <label class="check-pill"><input type="checkbox" name="interests" value="Warehouse / supply chain" /> Warehouse / supply chain</label>
+                  <label class="check-pill"><input type="checkbox" name="interests" value="Maintenance / diesel tech" /> Maintenance / diesel tech</label>
+                  <label class="check-pill"><input type="checkbox" name="interests" value="Tech / data" /> Tech / data</label>
+                  <label class="check-pill"><input type="checkbox" name="interests" value="Management" /> Management</label>
+                </div>
+              </div>
+              <div class="field">
+                <label id="relocate_label">Willing to relocate <span class="req" aria-hidden="true">*</span></label>
+                <div class="radio-row" role="radiogroup" aria-labelledby="relocate_label">
+                  <label><input type="radio" name="relocate" value="Yes" required /> Yes</label>
+                  <label><input type="radio" name="relocate" value="No" /> No</label>
+                  <label><input type="radio" name="relocate" value="Within state" /> Within state</label>
+                </div>
+              </div>
+              <div class="field">
+                <label id="remote_label">Remote OK <span class="hint-inline">(optional)</span></label>
+                <div class="radio-row" role="radiogroup" aria-labelledby="remote_label">
+                  <label><input type="radio" name="remote_ok" value="Yes" /> Yes</label>
+                  <label><input type="radio" name="remote_ok" value="No" /> No</label>
+                </div>
+              </div>
+              <div class="field full">
+                <label id="skillbridge_label">Interested in SkillBridge? <span class="hint-inline">(optional, active duty only)</span></label>
+                <div class="radio-row" role="radiogroup" aria-labelledby="skillbridge_label">
+                  <label><input type="radio" name="skillbridge" value="Yes" /> Yes</label>
+                  <label><input type="radio" name="skillbridge" value="No" /> No</label>
+                  <label><input type="radio" name="skillbridge" value="Not sure" /> Not sure</label>
+                </div>
+              </div>
+
+              <h3 class="form-subhead">Resume</h3>
               <div class="field full">
                 <label for="linkedin">LinkedIn URL <span class="hint-inline">(optional)</span></label>
                 <input id="linkedin" name="linkedin" type="url" placeholder="https://www.linkedin.com/in/..." />
               </div>
               <div class="field full">
-                <label for="resume">Resume file <span class="req" aria-hidden="true">*</span></label>
-                <p class="hint">Accepts PDF, DOC, or DOCX. You will attach this file in your email client after submit.</p>
-                <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required />
+                <label for="attachment">Resume file <span class="hint-inline">(PDF, DOC, or DOCX, max 5MB)</span></label>
+                <input id="attachment" name="attachment" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" data-max-bytes="5242880" />
+              </div>
+              <div class="field full">
+                <label for="resume_url">Or a link to your resume <span class="hint-inline">(Google Drive, Dropbox, etc.)</span></label>
+                <input id="resume_url" name="resume_url" type="url" placeholder="https://..." />
+                <p class="hint">Upload a file or share a link. One of the two is required.</p>
               </div>
               <div class="field full">
                 <label for="note">Short note <span class="hint-inline">(optional)</span></label>
                 <textarea id="note" name="note" placeholder="Anything we should know about your transition timeline or goals?"></textarea>
               </div>
+
+              <h3 class="form-subhead">One last thing</h3>
+              <div class="field">
+                <label for="heard_from">How did you hear about us? <span class="hint-inline">(optional)</span></label>
+                <select id="heard_from" name="heard_from" data-utm-prefill="true">
+                  <option value="">Select</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="LinkedIn">LinkedIn</option>
+                  <option value="TikTok">TikTok</option>
+                  <option value="YouTube">YouTube</option>
+                  <option value="X">X (Twitter)</option>
+                  <option value="Reddit">Reddit</option>
+                  <option value="Partner organization">Partner organization</option>
+                  <option value="Friend or coworker">Friend or coworker</option>
+                  <option value="Event">Event</option>
+                  <option value="Search">Search engine</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="heard_from_other">Details <span class="hint-inline">(optional)</span></label>
+                <input id="heard_from_other" name="heard_from_other" type="text" placeholder="Partner, person, or event name" />
+              </div>
+              <div class="field full">
+                <label class="consent-row" for="consent">
+                  <input id="consent" name="consent" type="checkbox" value="Agreed" required />
+                  <span>I agree that Veterans in Logistics may store my information and share my profile with partner employers for job matching. I can ask to be removed anytime by emailing contact@veteransinlogistics.org. <span class="req" aria-hidden="true">*</span></span>
+                </label>
+              </div>
             </div>
             <div class="form-actions">
+              <div class="form-error" role="alert"></div>
               <button class="btn btn-green btn-lg btn-block" type="submit">
-                Request Resume Review
+                Submit My Profile
                 <span class="arrow" aria-hidden="true">→</span>
               </button>
               <p class="form-note">
-                Submit opens your email client with a summary to contact@veteransinlogistics.org.
-                Attach your resume before sending. Field values are also saved locally so we can follow up.
+                Your profile goes straight to the Veterans in Logistics team. A person reviews every submission before any outreach.
               </p>
             </div>
           </form>

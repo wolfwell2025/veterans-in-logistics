@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sponsor | Veterans in Logistics</title>
   <meta name="description" content="Share job descriptions and sponsor interest. Hire mission-ready veterans into logistics careers." />
@@ -55,7 +56,7 @@
           </p>
           <ul>
             <li>Paste a JD or link to a public posting.</li>
-            <li>Mark veteran-friendly requirements so we prioritize the right fits.</li>
+            <li>Tell us about any veteran hiring program so we prioritize the right fits.</li>
             <li>We review both sides before introductions.</li>
           </ul>
           <p style="margin-top:1.5rem;">
@@ -64,61 +65,129 @@
         </aside>
 
         <div class="form-card">
-          <!--
-            Formspree-ready placeholder:
-              action="https://formspree.io/f/YOUR_FORM_ID"
-              method="POST"
-            Swap in a real endpoint when ready. No credentials inventing.
-          -->
           <div class="success-panel" role="status" aria-live="polite"></div>
-          <form id="sponsor-form" novalidate>
+          <form id="sponsor-form" action="https://formsubmit.co/60f3451a7dabcabba92fca302f1c7296" method="POST" enctype="multipart/form-data" data-form="sponsor" data-subject="VIL company / sponsor submission" novalidate>
+            <input type="hidden" name="_subject" value="VIL company / sponsor submission" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="form_name" value="sponsor" />
+            <input type="hidden" name="page" value="" />
+            <input type="hidden" name="utm_source" value="" />
+            <input type="hidden" name="utm_medium" value="" />
+            <input type="hidden" name="utm_campaign" value="" />
+            <div class="hp-field" aria-hidden="true">
+              <label for="sponsor_honey">Leave this field empty</label>
+              <input id="sponsor_honey" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+            </div>
+
             <div class="form-grid">
+              <h3 class="form-subhead">Company and contact</h3>
               <div class="field">
-                <label for="company_name">Company name <span class="req" aria-hidden="true">*</span></label>
+                <label for="company_name">Company <span class="req" aria-hidden="true">*</span></label>
                 <input id="company_name" name="company_name" type="text" autocomplete="organization" required />
+              </div>
+              <div class="field">
+                <label for="company_type">Company type <span class="req" aria-hidden="true">*</span></label>
+                <select id="company_type" name="company_type" required>
+                  <option value="">Select</option>
+                  <option>Carrier</option>
+                  <option>Broker</option>
+                  <option>3PL</option>
+                  <option>Shipper</option>
+                  <option>Tech</option>
+                  <option>Other</option>
+                </select>
               </div>
               <div class="field">
                 <label for="contact_name">Contact name <span class="req" aria-hidden="true">*</span></label>
                 <input id="contact_name" name="contact_name" type="text" autocomplete="name" required />
               </div>
-              <div class="field full">
-                <label for="contact_email">Contact email <span class="req" aria-hidden="true">*</span></label>
-                <input id="contact_email" name="contact_email" type="email" autocomplete="email" required />
+              <div class="field">
+                <label for="contact_title">Title <span class="hint-inline">(optional)</span></label>
+                <input id="contact_title" name="contact_title" type="text" autocomplete="organization-title" placeholder="e.g. Director of Recruiting" />
               </div>
               <div class="field">
-                <label for="role_title">Role title <span class="req" aria-hidden="true">*</span></label>
-                <input id="role_title" name="role_title" type="text" placeholder="e.g. Fleet Supervisor" required />
+                <label for="sponsor_email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input id="sponsor_email" name="email" type="email" autocomplete="email" required />
               </div>
               <div class="field">
-                <label for="location">Location <span class="req" aria-hidden="true">*</span></label>
-                <input id="location" name="location" type="text" placeholder="City, ST or Remote" required />
+                <label for="sponsor_phone">Phone <span class="hint-inline">(optional)</span></label>
+                <input id="sponsor_phone" name="phone" type="tel" autocomplete="tel" />
+              </div>
+
+              <h3 class="form-subhead">Hiring</h3>
+              <div class="field full">
+                <label id="roles_label">Roles hiring <span class="req" aria-hidden="true">*</span></label>
+                <p class="hint">Select all that apply.</p>
+                <div class="check-group" role="group" aria-labelledby="roles_label" data-required-group="roles_hiring">
+                  <label class="check-pill"><input type="checkbox" name="roles_hiring" value="Driving" /> Driving</label>
+                  <label class="check-pill"><input type="checkbox" name="roles_hiring" value="Dispatch / operations" /> Dispatch / operations</label>
+                  <label class="check-pill"><input type="checkbox" name="roles_hiring" value="Freight brokerage / sales" /> Freight brokerage / sales</label>
+                  <label class="check-pill"><input type="checkbox" name="roles_hiring" value="Warehouse / supply chain" /> Warehouse / supply chain</label>
+                  <label class="check-pill"><input type="checkbox" name="roles_hiring" value="Maintenance / diesel tech" /> Maintenance / diesel tech</label>
+                  <label class="check-pill"><input type="checkbox" name="roles_hiring" value="Tech / data" /> Tech / data</label>
+                  <label class="check-pill"><input type="checkbox" name="roles_hiring" value="Management" /> Management</label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="openings">Number of openings <span class="hint-inline">(optional)</span></label>
+                <input id="openings" name="openings" type="number" min="0" step="1" inputmode="numeric" placeholder="e.g. 5" />
+              </div>
+              <div class="field">
+                <label for="locations">Locations <span class="req" aria-hidden="true">*</span></label>
+                <input id="locations" name="locations" type="text" placeholder="Cities, states, or Remote" required />
               </div>
               <div class="field full">
-                <label for="jd_url">Job description URL <span class="hint-inline">(optional)</span></label>
+                <label for="jd_url">Careers page or job link <span class="hint-inline">(optional if you paste a JD)</span></label>
                 <input id="jd_url" name="jd_url" type="url" placeholder="https://..." />
               </div>
               <div class="field full">
-                <label for="jd_text">Job description text <span class="hint-inline">(optional if URL provided)</span></label>
-                <textarea id="jd_text" name="jd_text" placeholder="Paste key requirements, duties, and compensation range if available."></textarea>
+                <label for="jd_text">Paste job description <span class="hint-inline">(optional if you share a link)</span></label>
+                <textarea id="jd_text" name="jd_text" placeholder="Duties, requirements, pay range if available."></textarea>
+              </div>
+              <div class="field">
+                <label id="vet_program_label">Veteran hiring program? <span class="req" aria-hidden="true">*</span></label>
+                <div class="radio-row" role="radiogroup" aria-labelledby="vet_program_label">
+                  <label><input type="radio" name="veteran_program" value="Yes" required /> Yes</label>
+                  <label><input type="radio" name="veteran_program" value="No" /> No</label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="veteran_program_details">Describe it <span class="hint-inline">(optional)</span></label>
+                <input id="veteran_program_details" name="veteran_program_details" type="text" placeholder="e.g. SkillBridge host, military recruiter" />
+              </div>
+
+              <h3 class="form-subhead">Partnership</h3>
+              <div class="field full">
+                <label id="interest_label">Sponsorship interest <span class="req" aria-hidden="true">*</span></label>
+                <p class="hint">Select all that apply.</p>
+                <div class="check-group" role="group" aria-labelledby="interest_label" data-required-group="sponsorship_interest">
+                  <label class="check-pill"><input type="checkbox" name="sponsorship_interest" value="Sponsor the mission" /> Sponsor the mission</label>
+                  <label class="check-pill"><input type="checkbox" name="sponsorship_interest" value="Post jobs" /> Post jobs</label>
+                  <label class="check-pill"><input type="checkbox" name="sponsorship_interest" value="Founding seat" /> Founding seat</label>
+                  <label class="check-pill"><input type="checkbox" name="sponsorship_interest" value="Event sponsor" /> Event sponsor</label>
+                  <label class="check-pill"><input type="checkbox" name="sponsorship_interest" value="Just exploring" /> Just exploring</label>
+                </div>
               </div>
               <div class="field full">
-                <label class="check-pill" style="width:fit-content;">
-                  <input type="checkbox" name="veteran_friendly" value="yes" />
-                  This role is veteran-friendly (military experience valued)
+                <label for="notes">Notes <span class="hint-inline">(optional)</span></label>
+                <textarea id="notes" name="notes" placeholder="Hiring goals, timing, or questions for our team."></textarea>
+              </div>
+              <div class="field full">
+                <label class="consent-row" for="sponsor_consent">
+                  <input id="sponsor_consent" name="consent" type="checkbox" value="Agreed" required />
+                  <span>I confirm I am authorized to share these openings, and I agree that Veterans in Logistics may store this information, contact me about it, and share the roles with veteran candidates for job matching. <span class="req" aria-hidden="true">*</span></span>
                 </label>
-              </div>
-              <div class="field full">
-                <label for="sponsor_notes">Sponsor interest notes <span class="hint-inline">(optional)</span></label>
-                <textarea id="sponsor_notes" name="sponsor_notes" placeholder="Hiring goals, volume, summit interest, or scholarship support."></textarea>
               </div>
             </div>
             <div class="form-actions">
+              <div class="form-error" role="alert"></div>
               <button class="btn btn-green btn-lg btn-block" type="submit">
-                Send Job Description
+                Send to Our Team
                 <span class="arrow" aria-hidden="true">→</span>
               </button>
               <p class="form-note">
-                Submit opens your email client with a summary to contact@veteransinlogistics.org.
+                Goes straight to the Veterans in Logistics team. We review both sides before any introductions.
               </p>
             </div>
           </form>

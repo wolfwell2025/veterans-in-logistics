@@ -97,137 +97,294 @@
     panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
 
-  // Veteran resume / join form
-  var joinForm = document.getElementById("join-form");
-  if (joinForm) {
-    joinForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var form = e.target;
-      var roles = checkedValues(form, "preferred_roles");
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
+  // ---------- UTM capture ----------
+  // Saves utm_* params from the landing URL, carries them onto internal
+  // links (join, sponsor, founders), and fills hidden form fields.
+  var UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
+  var UTM_STORE = "vil_utm";
+
+  function readUtm() {
+    var stored = {};
+    try {
+      stored = JSON.parse(sessionStorage.getItem(UTM_STORE) || "{}") || {};
+    } catch (err) {
+      stored = {};
+    }
+    var params = new URLSearchParams(window.location.search);
+    var fresh = {};
+    var hasFresh = false;
+    UTM_KEYS.forEach(function (k) {
+      var v = params.get(k);
+      if (v) {
+        fresh[k] = v.slice(0, 120);
+        hasFresh = true;
       }
-      if (!roles.length) {
-        alert("Please select at least one preferred role.");
-        return;
-      }
-      var fileInput = form.elements.namedItem("resume");
-      var fileName =
-        fileInput && fileInput.files && fileInput.files[0]
-          ? fileInput.files[0].name
-          : "(none selected)";
-
-      var lines = [
-        "Veteran resume / profile request",
-        "--------------------------------",
-        "Full name: " + val(form, "full_name"),
-        "Email: " + val(form, "email"),
-        "Phone: " + (val(form, "phone") || "n/a"),
-        "Branch / service: " + val(form, "branch"),
-        "MOS or rating: " + val(form, "mos"),
-        "Years of service: " + val(form, "years_of_service"),
-        "Preferred roles: " + (roles.length ? roles.join(", ") : "n/a"),
-        "Locations willing to work: " + val(form, "locations"),
-        "CDL: " + (val(form, "cdl") || "n/a"),
-        "Clearance: " + (val(form, "clearance") || "n/a"),
-        "LinkedIn: " + (val(form, "linkedin") || "n/a"),
-        "Resume file (attach manually): " + fileName,
-        "Note: " + (val(form, "note") || "n/a"),
-      ];
-
-      var summary = lines.join("\n");
-      var mailto = buildMailto("Veteran resume request: " + val(form, "full_name"), lines);
-      window.location.href = mailto;
-
-      var card = form.closest(".form-card");
-      showSuccess(
-        card,
-        "Request ready",
-        [
-          "Your details were packaged into an email to contact@veteransinlogistics.org. If your email client opened, review and send.",
-          "We will follow up after reviewing your profile. Careers, not placements.",
-        ],
-        summary,
-        "IMPORTANT: Email cannot attach files automatically. Please attach your resume (" +
-          fileName +
-          ") in the email client before sending. PDF, DOC, or DOCX preferred."
-      );
-
+    });
+    var utm = hasFresh ? fresh : stored;
+    if (hasFresh) {
       try {
-        localStorage.setItem(
-          "vil_join_draft",
-          JSON.stringify({
-            savedAt: new Date().toISOString(),
-            fields: {
-              full_name: val(form, "full_name"),
-              email: val(form, "email"),
-              phone: val(form, "phone"),
-              branch: val(form, "branch"),
-              mos: val(form, "mos"),
-              years_of_service: val(form, "years_of_service"),
-              preferred_roles: roles,
-              locations: val(form, "locations"),
-              cdl: val(form, "cdl"),
-              clearance: val(form, "clearance"),
-              linkedin: val(form, "linkedin"),
-              note: val(form, "note"),
-              resume_filename: fileName,
-            },
-          })
-        );
+        sessionStorage.setItem(UTM_STORE, JSON.stringify(utm));
       } catch (err) {
-        /* ignore storage errors */
+        /* storage blocked */
       }
+    }
+    return utm;
+  }
+
+  var utm = readUtm();
+
+  function decorateLinks() {
+    if (!Object.keys(utm).length) return;
+    document.querySelectorAll("a[href]").forEach(function (a) {
+      var href = a.getAttribute("href");
+      if (!href || href.charAt(0) === "#" || /^(mailto|tel|javascript):/i.test(href)) return;
+      var url;
+      try {
+        url = new URL(href, window.location.href);
+      } catch (err) {
+        return;
+      }
+      if (url.origin !== window.location.origin) return;
+      if (!/\.html$|\/$/.test(url.pathname)) return;
+      Object.keys(utm).forEach(function (k) {
+        if (!url.searchParams.has(k)) url.searchParams.set(k, utm[k]);
+      });
+      a.setAttribute("href", url.href);
+    });
+  }
+  decorateLinks();
+
+  function fillHidden(form) {
+    UTM_KEYS.forEach(function (k) {
+      var el = form.elements.namedItem(k);
+      if (el && utm[k]) el.value = utm[k];
+    });
+    var page = form.elements.namedItem("page");
+    if (page) page.value = window.location.href.split("#")[0];
+    var heard = form.querySelector("[data-utm-prefill]");
+    if (heard && utm.utm_source && !heard.value) {
+      var src = utm.utm_source.toLowerCase();
+      var aliases = { ig: "instagram", fb: "facebook", li: "linkedin", twitter: "x", yt: "youtube", tt: "tiktok", google: "search", bing: "search" };
+      src = aliases[src] || src;
+      var match = Array.prototype.find.call(heard.options, function (o) {
+        return o.value && o.value.toLowerCase() === src;
+      });
+      if (match) {
+        heard.value = match.value;
+      } else {
+        heard.value = "Other";
+        var other = form.elements.namedItem("heard_from_other");
+        if (other && !other.value) other.value = utm.utm_source;
+      }
+    }
+  }
+
+  // ---------- Form submission (FormSubmit.co backend, mailto fallback) ----------
+  var CONTACT = "contact@veteransinlogistics.org";
+
+  function groupLabel(form, name) {
+    var group = form.querySelector('[data-required-group="' + name + '"]');
+    var id = group && group.getAttribute("aria-labelledby");
+    var label = id && document.getElementById(id);
+    return label ? label.textContent.replace("*", "").trim() : name;
+  }
+
+  function validate(form) {
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return false;
+    }
+    var groups = form.querySelectorAll("[data-required-group]");
+    for (var i = 0; i < groups.length; i++) {
+      var name = groups[i].getAttribute("data-required-group");
+      if (!checkedValues(form, name).length) {
+        alert("Please choose at least one option for: " + groupLabel(form, name));
+        groups[i].querySelector("input").focus();
+        return false;
+      }
+    }
+    var file = form.elements.namedItem("attachment");
+    if (file && file.files && file.files[0]) {
+      var f = file.files[0];
+      var max = parseInt(file.getAttribute("data-max-bytes") || "5242880", 10);
+      if (f.size > max) {
+        alert("Resume file is too large. Please keep it under 5MB, or share a link instead.");
+        return false;
+      }
+      if (!/\.(pdf|docx?|DOCX?|PDF)$/.test(f.name)) {
+        alert("Please upload a PDF, DOC, or DOCX file.");
+        return false;
+      }
+    }
+    if (form.id === "join-form") {
+      var hasFile = file && file.files && file.files.length;
+      if (!hasFile && !val(form, "resume_url")) {
+        alert("Please upload your resume or share a link to it.");
+        return false;
+      }
+    }
+    if (form.id === "sponsor-form" && !val(form, "jd_url") && !val(form, "jd_text")) {
+      alert("Please share a careers page or job link, or paste the job description.");
+      return false;
+    }
+    return true;
+  }
+
+  function buildPayload(form) {
+    var data = new FormData();
+    var seenGroups = {};
+    Array.prototype.forEach.call(form.elements, function (el) {
+      if (!el.name || el.disabled) return;
+      if (el.type === "checkbox" && form.querySelectorAll('[name="' + el.name + '"]').length > 1) {
+        if (seenGroups[el.name]) return;
+        seenGroups[el.name] = true;
+        data.append(el.name, checkedValues(form, el.name).join(", "));
+        return;
+      }
+      if ((el.type === "checkbox" || el.type === "radio") && !el.checked) return;
+      if (el.type === "file") {
+        if (el.files && el.files[0]) data.append(el.name, el.files[0], el.files[0].name);
+        return;
+      }
+      if (el.tagName === "BUTTON") return;
+      data.append(el.name, el.value);
+    });
+    var who = val(form, "full_name") || val(form, "company_name") || val(form, "email");
+    var subject = (form.getAttribute("data-subject") || "VIL submission") + ": " + who;
+    data.set("_subject", subject);
+    data.append("submitted_at", new Date().toISOString());
+    return { data: data, subject: subject };
+  }
+
+  function summaryLines(payload) {
+    var lines = [];
+    payload.data.forEach(function (v, k) {
+      if (k.charAt(0) === "_" || v === "") return;
+      if (typeof v !== "string") v = "(file: " + v.name + ", please attach)";
+      lines.push(k.replace(/_/g, " ") + ": " + v);
+    });
+    return lines;
+  }
+
+  function showError(form, payload) {
+    var box = form.querySelector(".form-error");
+    var mailto = buildMailto(payload.subject, summaryLines(payload));
+    if (box) {
+      box.innerHTML = "";
+      box.appendChild(document.createTextNode("We could not send your form just now. "));
+      var a = document.createElement("a");
+      a.href = mailto;
+      a.textContent = "Email it to " + CONTACT + " instead";
+      box.appendChild(a);
+      box.appendChild(document.createTextNode(", or try again in a minute."));
+      box.classList.add("is-visible");
+    }
+    window.location.href = mailto;
+  }
+
+  function addHidden(form, name, value) {
+    var el = form.elements.namedItem(name);
+    if (!el || el.type !== "hidden") {
+      el = document.createElement("input");
+      el.type = "hidden";
+      el.name = name;
+      form.appendChild(el);
+    }
+    el.value = value;
+  }
+
+  function nativeSubmit(form) {
+    var groups = {};
+    form.querySelectorAll('input[type="checkbox"]').forEach(function (el) {
+      if (form.querySelectorAll('[name="' + el.name + '"]').length > 1) groups[el.name] = true;
+    });
+    Object.keys(groups).forEach(function (name) {
+      var joined = checkedValues(form, name).join(", ");
+      form.querySelectorAll('[name="' + name + '"]').forEach(function (el) {
+        el.disabled = true;
+      });
+      addHidden(form, name, joined);
+    });
+    var who = val(form, "full_name") || val(form, "company_name") || val(form, "email");
+    addHidden(form, "_subject", (form.getAttribute("data-subject") || "VIL submission") + ": " + who);
+    addHidden(form, "submitted_at", new Date().toISOString());
+    addHidden(form, "_next", window.location.origin + window.location.pathname + "?submitted=1");
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) btn.disabled = true;
+    HTMLFormElement.prototype.submit.call(form);
+  }
+
+  function wireForm(form, success) {
+    if (/[?&]submitted=1\b/.test(window.location.search)) {
+      showSuccess(form.closest(".form-card"), success.title, success.body, null, null);
+    }
+    fillHidden(form);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var honey = form.elements.namedItem("_honey");
+      if (honey && honey.value) return; // bot
+      if (!validate(form)) return;
+      var fileEl = form.elements.namedItem("attachment");
+      if (fileEl && fileEl.files && fileEl.files.length) {
+        // FormSubmit only accepts file attachments on a normal (non AJAX) post.
+        nativeSubmit(form);
+        return;
+      }
+      var payload = buildPayload(form);
+      var btn = form.querySelector('button[type="submit"]');
+      var errBox = form.querySelector(".form-error");
+      if (errBox) errBox.classList.remove("is-visible");
+      if (btn) btn.disabled = true;
+      var endpoint = form.getAttribute("action").replace("formsubmit.co/", "formsubmit.co/ajax/");
+      fetch(endpoint, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: payload.data,
+        // The host sends no referrer by default; FormSubmit needs the page URL.
+        referrer: window.location.origin + window.location.pathname,
+        referrerPolicy: "no-referrer-when-downgrade",
+      })
+        .then(function (res) {
+          return res.json().catch(function () {
+            return {};
+          }).then(function (json) {
+            if (!res.ok || String(json.success) !== "true") throw new Error(json.message || "Send failed");
+            return json;
+          });
+        })
+        .then(function () {
+          form.reset();
+          fillHidden(form);
+          showSuccess(form.closest(".form-card"), success.title, success.body, null, null);
+        })
+        .catch(function () {
+          showError(form, payload);
+        })
+        .then(function () {
+          if (btn) btn.disabled = false;
+        });
     });
   }
 
-  // Sponsor / JD form
+  var joinForm = document.getElementById("join-form");
+  if (joinForm) {
+    wireForm(joinForm, {
+      title: "Profile received",
+      body: [
+        "Thank you. Your profile is with the Veterans in Logistics team.",
+        "A person reviews every profile before any outreach. We will contact you by email when we have a fit. Careers, not placements.",
+      ],
+    });
+  }
+
   var sponsorForm = document.getElementById("sponsor-form");
   if (sponsorForm) {
-    sponsorForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var form = e.target;
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      if (!val(form, "jd_url") && !val(form, "jd_text")) {
-        alert("Please provide a job description URL or paste the JD text.");
-        return;
-      }
-      var veteranFriendly = form.elements.namedItem("veteran_friendly");
-      var lines = [
-        "Company job description / sponsor interest",
-        "------------------------------------------",
-        "Company: " + val(form, "company_name"),
-        "Contact name: " + val(form, "contact_name"),
-        "Contact email: " + val(form, "contact_email"),
-        "Role title: " + val(form, "role_title"),
-        "Location: " + val(form, "location"),
-        "JD URL: " + (val(form, "jd_url") || "n/a"),
-        "JD text: " + (val(form, "jd_text") || "n/a"),
-        "Veteran-friendly role: " +
-          (veteranFriendly && veteranFriendly.checked ? "Yes" : "No"),
-        "Sponsor interest notes: " + (val(form, "sponsor_notes") || "n/a"),
-      ];
-      var summary = lines.join("\n");
-      window.location.href = buildMailto(
-        "Sponsor / JD: " + val(form, "company_name") + " / " + val(form, "role_title"),
-        lines
-      );
-      // Note: subject above has em dash in code path for email subject - user said user-facing text.
-      // Fix: avoid em dash in subject too for consistency.
-      showSuccess(
-        form.closest(".form-card"),
-        "Submission ready",
-        [
-          "Your job details were packaged into an email to contact@veteransinlogistics.org. If your email client opened, review and send.",
-          "Our team reviews submissions before any outreach. Thank you for investing in veteran talent.",
-        ],
-        summary,
-        null
-      );
+    wireForm(sponsorForm, {
+      title: "Submission received",
+      body: [
+        "Thank you. Your hiring details are with the Veterans in Logistics team.",
+        "We will follow up by email. We review both sides before any introductions.",
+      ],
     });
   }
 
