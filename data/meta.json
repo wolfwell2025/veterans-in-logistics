@@ -1,59 +1,55 @@
 {
- "updated_at": "2026-10-23T11:02:05+00:00",
- "total_jobs": 1934,
+ "updated_at": "2026-10-24T11:04:44+00:00",
+ "total_jobs": 1933,
  "employers": [
   {
    "employer": "C.H. Robinson",
    "segment": "3PL / broker",
    "ats": "workday",
    "ok": true,
-   "reported_total": 161,
-   "fetched": 161,
-   "listed": 106,
-   "duplicates_removed": 2,
-   "non_us_removed": 53
+   "reported_total": 165,
+   "fetched": 165,
+   "listed": 108,
+   "duplicates_removed": 3,
+   "non_us_removed": 54
   },
   {
    "employer": "RXO",
    "segment": "broker / managed transportation",
    "ats": "workday",
-   "ok": true,
-   "reported_total": 351,
-   "fetched": 351,
+   "ok": false,
+   "error": "Expecting value: line 1 column 1 (char 0)",
    "listed": 260,
-   "duplicates_removed": 65,
-   "non_us_removed": 26
+   "carried_over": true
   },
   {
    "employer": "J.B. Hunt",
    "segment": "carrier / intermodal / brokerage",
    "ats": "workday",
    "ok": true,
-   "reported_total": 490,
-   "fetched": 490,
-   "listed": 429,
-   "duplicates_removed": 59,
-   "non_us_removed": 2
+   "reported_total": 489,
+   "fetched": 489,
+   "listed": 423,
+   "duplicates_removed": 63,
+   "non_us_removed": 3
   },
   {
    "employer": "Werner Enterprises",
    "segment": "truckload carrier",
    "ats": "workday",
-   "ok": true,
-   "reported_total": 106,
-   "fetched": 106,
+   "ok": false,
+   "error": "Expecting value: line 1 column 1 (char 0)",
    "listed": 101,
-   "duplicates_removed": 5,
-   "non_us_removed": 0
+   "carried_over": true
   },
   {
    "employer": "Old Dominion Freight Line",
    "segment": "LTL carrier",
    "ats": "workday",
    "ok": true,
-   "reported_total": 227,
-   "fetched": 227,
-   "listed": 224,
+   "reported_total": 223,
+   "fetched": 223,
+   "listed": 220,
    "duplicates_removed": 3,
    "non_us_removed": 0
   },
@@ -62,9 +58,9 @@
    "segment": "fleet / dedicated / supply chain",
    "ats": "workday",
    "ok": true,
-   "reported_total": 440,
-   "fetched": 440,
-   "listed": 347,
+   "reported_total": 433,
+   "fetched": 433,
+   "listed": 340,
    "duplicates_removed": 23,
    "non_us_removed": 70
   },
@@ -84,33 +80,33 @@
    "segment": "digital broker / freight tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 72,
-   "fetched": 72,
-   "listed": 48,
+   "reported_total": 76,
+   "fetched": 76,
+   "listed": 53,
    "duplicates_removed": 0,
-   "non_us_removed": 24
+   "non_us_removed": 23
   },
   {
    "employer": "Flexport",
    "segment": "freight forwarder / freight tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 193,
-   "fetched": 193,
-   "listed": 74,
+   "reported_total": 190,
+   "fetched": 190,
+   "listed": 73,
    "duplicates_removed": 2,
-   "non_us_removed": 117
+   "non_us_removed": 115
   },
   {
    "employer": "Motive",
    "segment": "fleet tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 146,
-   "fetched": 146,
-   "listed": 64,
+   "reported_total": 157,
+   "fetched": 157,
+   "listed": 71,
    "duplicates_removed": 2,
-   "non_us_removed": 80
+   "non_us_removed": 84
   },
   {
    "employer": "project44",
@@ -139,11 +135,11 @@
    "segment": "fleet tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 278,
-   "fetched": 278,
-   "listed": 188,
-   "duplicates_removed": 7,
-   "non_us_removed": 83
+   "reported_total": 285,
+   "fetched": 285,
+   "listed": 191,
+   "duplicates_removed": 10,
+   "non_us_removed": 84
   },
   {
    "employer": "Arrive Logistics",
@@ -180,14 +176,14 @@
   }
  ],
  "categories": {
+  "warehouse_dock": 123,
+  "dispatch_operations": 266,
+  "other": 243,
+  "brokerage_sales": 391,
+  "management": 438,
   "tech_data": 164,
-  "maintenance_technician": 224,
-  "management": 433,
-  "dispatch_operations": 269,
-  "warehouse_dock": 128,
-  "brokerage_sales": 390,
-  "other": 244,
-  "driving_cdl": 82
+  "maintenance_technician": 223,
+  "driving_cdl": 85
  },
  "category_labels": {
   "driving_cdl": "Driving / CDL",
@@ -199,8 +195,8 @@
   "management": "Management",
   "other": "Other"
  },
- "cdl_jobs": 74,
- "remote_jobs": 262,
- "feeds_failed": 0,
+ "cdl_jobs": 77,
+ "remote_jobs": 266,
+ "feeds_failed": 2,
  "source_note": "Public job-posting feeds from each employer's own careers site. Apply links go to the employer."
 }
