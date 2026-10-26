@@ -1,15 +1,15 @@
 {
- "updated_at": "2026-10-25T11:04:06+00:00",
- "total_jobs": 1928,
+ "updated_at": "2026-10-26T11:04:19+00:00",
+ "total_jobs": 1924,
  "employers": [
   {
    "employer": "C.H. Robinson",
    "segment": "3PL / broker",
    "ats": "workday",
    "ok": true,
-   "reported_total": 165,
-   "fetched": 165,
-   "listed": 108,
+   "reported_total": 166,
+   "fetched": 166,
+   "listed": 109,
    "duplicates_removed": 3,
    "non_us_removed": 54
   },
@@ -29,9 +29,9 @@
    "segment": "carrier / intermodal / brokerage",
    "ats": "workday",
    "ok": true,
-   "reported_total": 489,
-   "fetched": 489,
-   "listed": 423,
+   "reported_total": 487,
+   "fetched": 487,
+   "listed": 421,
    "duplicates_removed": 63,
    "non_us_removed": 3
   },
@@ -51,9 +51,9 @@
    "segment": "LTL carrier",
    "ats": "workday",
    "ok": true,
-   "reported_total": 222,
-   "fetched": 222,
-   "listed": 219,
+   "reported_total": 221,
+   "fetched": 221,
+   "listed": 218,
    "duplicates_removed": 3,
    "non_us_removed": 0
   },
@@ -62,9 +62,9 @@
    "segment": "fleet / dedicated / supply chain",
    "ats": "workday",
    "ok": true,
-   "reported_total": 433,
-   "fetched": 433,
-   "listed": 340,
+   "reported_total": 430,
+   "fetched": 430,
+   "listed": 337,
    "duplicates_removed": 23,
    "non_us_removed": 70
   },
@@ -95,22 +95,22 @@
    "segment": "freight forwarder / freight tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 190,
-   "fetched": 190,
+   "reported_total": 189,
+   "fetched": 189,
    "listed": 73,
    "duplicates_removed": 2,
-   "non_us_removed": 115
+   "non_us_removed": 114
   },
   {
    "employer": "Motive",
    "segment": "fleet tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 156,
-   "fetched": 156,
-   "listed": 71,
+   "reported_total": 158,
+   "fetched": 158,
+   "listed": 72,
    "duplicates_removed": 2,
-   "non_us_removed": 83
+   "non_us_removed": 84
   },
   {
    "employer": "project44",
@@ -139,11 +139,11 @@
    "segment": "fleet tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 284,
-   "fetched": 284,
+   "reported_total": 287,
+   "fetched": 287,
    "listed": 191,
    "duplicates_removed": 10,
-   "non_us_removed": 83
+   "non_us_removed": 86
   },
   {
    "employer": "Arrive Logistics",
@@ -180,12 +180,12 @@
   }
  ],
  "categories": {
-  "management": 437,
-  "warehouse_dock": 123,
+  "tech_data": 164,
+  "management": 434,
+  "warehouse_dock": 122,
   "dispatch_operations": 264,
-  "other": 243,
-  "brokerage_sales": 392,
-  "tech_data": 162,
+  "other": 242,
+  "brokerage_sales": 391,
   "maintenance_technician": 223,
   "driving_cdl": 84
  },
@@ -200,7 +200,7 @@
   "other": "Other"
  },
  "cdl_jobs": 76,
- "remote_jobs": 266,
+ "remote_jobs": 267,
  "feeds_failed": 0,
  "source_note": "Public job-posting feeds from each employer's own careers site. Apply links go to the employer."
 }
