@@ -1,17 +1,17 @@
 {
- "updated_at": "2026-10-27T11:11:35+00:00",
- "total_jobs": 1935,
+ "updated_at": "2026-10-28T11:10:36+00:00",
+ "total_jobs": 1931,
  "employers": [
   {
    "employer": "C.H. Robinson",
    "segment": "3PL / broker",
    "ats": "workday",
    "ok": true,
-   "reported_total": 170,
-   "fetched": 170,
-   "listed": 110,
+   "reported_total": 171,
+   "fetched": 171,
+   "listed": 113,
    "duplicates_removed": 3,
-   "non_us_removed": 57
+   "non_us_removed": 55
   },
   {
    "employer": "RXO",
@@ -20,29 +20,29 @@
    "ok": true,
    "reported_total": 352,
    "fetched": 352,
-   "listed": 260,
-   "duplicates_removed": 64,
-   "non_us_removed": 28
+   "listed": 259,
+   "duplicates_removed": 66,
+   "non_us_removed": 27
   },
   {
    "employer": "J.B. Hunt",
    "segment": "carrier / intermodal / brokerage",
    "ats": "workday",
    "ok": true,
-   "reported_total": 477,
-   "fetched": 477,
-   "listed": 413,
-   "duplicates_removed": 60,
-   "non_us_removed": 4
+   "reported_total": 479,
+   "fetched": 479,
+   "listed": 416,
+   "duplicates_removed": 58,
+   "non_us_removed": 5
   },
   {
    "employer": "Werner Enterprises",
    "segment": "truckload carrier",
    "ats": "workday",
    "ok": true,
-   "reported_total": 114,
-   "fetched": 114,
-   "listed": 108,
+   "reported_total": 113,
+   "fetched": 113,
+   "listed": 107,
    "duplicates_removed": 6,
    "non_us_removed": 0
   },
@@ -51,9 +51,9 @@
    "segment": "LTL carrier",
    "ats": "workday",
    "ok": true,
-   "reported_total": 212,
-   "fetched": 212,
-   "listed": 209,
+   "reported_total": 214,
+   "fetched": 214,
+   "listed": 211,
    "duplicates_removed": 3,
    "non_us_removed": 0
   },
@@ -62,10 +62,10 @@
    "segment": "fleet / dedicated / supply chain",
    "ats": "workday",
    "ok": true,
-   "reported_total": 427,
-   "fetched": 427,
-   "listed": 333,
-   "duplicates_removed": 20,
+   "reported_total": 421,
+   "fetched": 421,
+   "listed": 328,
+   "duplicates_removed": 19,
    "non_us_removed": 74
   },
   {
@@ -73,9 +73,9 @@
    "segment": "freight payments / factoring",
    "ats": "workday",
    "ok": true,
-   "reported_total": 15,
-   "fetched": 15,
-   "listed": 15,
+   "reported_total": 14,
+   "fetched": 14,
+   "listed": 14,
    "duplicates_removed": 0,
    "non_us_removed": 0
   },
@@ -95,22 +95,22 @@
    "segment": "freight forwarder / freight tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 190,
-   "fetched": 190,
-   "listed": 72,
+   "reported_total": 186,
+   "fetched": 186,
+   "listed": 71,
    "duplicates_removed": 2,
-   "non_us_removed": 116
+   "non_us_removed": 113
   },
   {
    "employer": "Motive",
    "segment": "fleet tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 164,
-   "fetched": 164,
-   "listed": 74,
+   "reported_total": 165,
+   "fetched": 165,
+   "listed": 76,
    "duplicates_removed": 2,
-   "non_us_removed": 88
+   "non_us_removed": 87
   },
   {
    "employer": "project44",
@@ -120,8 +120,8 @@
    "reported_total": 27,
    "fetched": 27,
    "listed": 6,
-   "duplicates_removed": 0,
-   "non_us_removed": 21
+   "duplicates_removed": 1,
+   "non_us_removed": 20
   },
   {
    "employer": "FourKites",
@@ -141,18 +141,18 @@
    "ok": true,
    "reported_total": 320,
    "fetched": 320,
-   "listed": 212,
-   "duplicates_removed": 27,
-   "non_us_removed": 81
+   "listed": 211,
+   "duplicates_removed": 26,
+   "non_us_removed": 83
   },
   {
    "employer": "Arrive Logistics",
    "segment": "broker",
    "ats": "lever",
    "ok": true,
-   "reported_total": 67,
-   "fetched": 67,
-   "listed": 58,
+   "reported_total": 63,
+   "fetched": 63,
+   "listed": 54,
    "duplicates_removed": 0,
    "non_us_removed": 9
   },
@@ -180,14 +180,14 @@
   }
  ],
  "categories": {
-  "management": 434,
-  "maintenance_technician": 223,
-  "driving_cdl": 81,
-  "other": 261,
+  "management": 438,
+  "brokerage_sales": 395,
   "dispatch_operations": 259,
-  "tech_data": 163,
-  "brokerage_sales": 390,
-  "warehouse_dock": 124
+  "warehouse_dock": 121,
+  "maintenance_technician": 223,
+  "tech_data": 161,
+  "other": 254,
+  "driving_cdl": 80
  },
  "category_labels": {
   "driving_cdl": "Driving / CDL",
