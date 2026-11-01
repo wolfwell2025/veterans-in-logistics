@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-31T11:09:50+00:00",
- "total_jobs": 1916,
+ "updated_at": "2026-11-01T12:10:14+00:00",
+ "total_jobs": 1925,
  "employers": [
   {
    "employer": "C.H. Robinson",
@@ -29,10 +29,10 @@
    "segment": "carrier / intermodal / brokerage",
    "ats": "workday",
    "ok": true,
-   "reported_total": 470,
-   "fetched": 470,
-   "listed": 409,
-   "duplicates_removed": 56,
+   "reported_total": 466,
+   "fetched": 466,
+   "listed": 406,
+   "duplicates_removed": 55,
    "non_us_removed": 5
   },
   {
@@ -51,9 +51,9 @@
    "segment": "LTL carrier",
    "ats": "workday",
    "ok": true,
-   "reported_total": 204,
-   "fetched": 204,
-   "listed": 201,
+   "reported_total": 203,
+   "fetched": 203,
+   "listed": 200,
    "duplicates_removed": 3,
    "non_us_removed": 0
   },
@@ -62,11 +62,11 @@
    "segment": "fleet / dedicated / supply chain",
    "ats": "workday",
    "ok": true,
-   "reported_total": 418,
-   "fetched": 418,
+   "reported_total": 417,
+   "fetched": 417,
    "listed": 322,
    "duplicates_removed": 19,
-   "non_us_removed": 77
+   "non_us_removed": 76
   },
   {
    "employer": "Triumph Financial",
@@ -139,11 +139,11 @@
    "segment": "fleet tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 326,
-   "fetched": 326,
-   "listed": 212,
+   "reported_total": 338,
+   "fetched": 338,
+   "listed": 225,
    "duplicates_removed": 21,
-   "non_us_removed": 93
+   "non_us_removed": 92
   },
   {
    "employer": "Arrive Logistics",
@@ -181,13 +181,13 @@
  ],
  "categories": {
   "management": 442,
-  "maintenance_technician": 224,
-  "dispatch_operations": 253,
+  "maintenance_technician": 231,
+  "dispatch_operations": 252,
   "driving_cdl": 76,
   "warehouse_dock": 116,
   "tech_data": 170,
-  "other": 237,
-  "brokerage_sales": 398
+  "other": 236,
+  "brokerage_sales": 402
  },
  "category_labels": {
   "driving_cdl": "Driving / CDL",
@@ -200,7 +200,7 @@
   "other": "Other"
  },
  "cdl_jobs": 66,
- "remote_jobs": 287,
+ "remote_jobs": 299,
  "feeds_failed": 0,
  "source_note": "Public job-posting feeds from each employer's own careers site. Apply links go to the employer."
 }
