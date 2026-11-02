@@ -1,17 +1,17 @@
 {
- "updated_at": "2026-11-01T12:10:14+00:00",
- "total_jobs": 1925,
+ "updated_at": "2026-11-02T12:06:45+00:00",
+ "total_jobs": 1916,
  "employers": [
   {
    "employer": "C.H. Robinson",
    "segment": "3PL / broker",
    "ats": "workday",
    "ok": true,
-   "reported_total": 157,
-   "fetched": 157,
+   "reported_total": 161,
+   "fetched": 161,
    "listed": 107,
    "duplicates_removed": 3,
-   "non_us_removed": 47
+   "non_us_removed": 51
   },
   {
    "employer": "RXO",
@@ -51,9 +51,9 @@
    "segment": "LTL carrier",
    "ats": "workday",
    "ok": true,
-   "reported_total": 203,
-   "fetched": 203,
-   "listed": 200,
+   "reported_total": 202,
+   "fetched": 202,
+   "listed": 199,
    "duplicates_removed": 3,
    "non_us_removed": 0
   },
@@ -62,9 +62,9 @@
    "segment": "fleet / dedicated / supply chain",
    "ats": "workday",
    "ok": true,
-   "reported_total": 417,
-   "fetched": 417,
-   "listed": 322,
+   "reported_total": 415,
+   "fetched": 415,
+   "listed": 320,
    "duplicates_removed": 19,
    "non_us_removed": 76
   },
@@ -84,9 +84,9 @@
    "segment": "digital broker / freight tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 94,
-   "fetched": 94,
-   "listed": 66,
+   "reported_total": 88,
+   "fetched": 88,
+   "listed": 60,
    "duplicates_removed": 0,
    "non_us_removed": 28
   },
@@ -95,9 +95,9 @@
    "segment": "freight forwarder / freight tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 193,
-   "fetched": 193,
-   "listed": 72,
+   "reported_total": 192,
+   "fetched": 192,
+   "listed": 71,
    "duplicates_removed": 1,
    "non_us_removed": 120
   },
@@ -106,11 +106,11 @@
    "segment": "fleet tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 167,
-   "fetched": 167,
+   "reported_total": 166,
+   "fetched": 166,
    "listed": 76,
    "duplicates_removed": 4,
-   "non_us_removed": 87
+   "non_us_removed": 86
   },
   {
    "employer": "project44",
@@ -128,20 +128,20 @@
    "segment": "freight visibility tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 17,
-   "fetched": 17,
+   "reported_total": 18,
+   "fetched": 18,
    "listed": 9,
    "duplicates_removed": 0,
-   "non_us_removed": 8
+   "non_us_removed": 9
   },
   {
    "employer": "Samsara",
    "segment": "fleet tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 338,
-   "fetched": 338,
-   "listed": 225,
+   "reported_total": 339,
+   "fetched": 339,
+   "listed": 226,
    "duplicates_removed": 21,
    "non_us_removed": 92
   },
@@ -180,14 +180,14 @@
   }
  ],
  "categories": {
-  "management": 442,
+  "management": 440,
   "maintenance_technician": 231,
   "dispatch_operations": 252,
   "driving_cdl": 76,
   "warehouse_dock": 116,
-  "tech_data": 170,
-  "other": 236,
-  "brokerage_sales": 402
+  "other": 235,
+  "tech_data": 163,
+  "brokerage_sales": 403
  },
  "category_labels": {
   "driving_cdl": "Driving / CDL",
@@ -200,7 +200,7 @@
   "other": "Other"
  },
  "cdl_jobs": 66,
- "remote_jobs": 299,
+ "remote_jobs": 300,
  "feeds_failed": 0,
  "source_note": "Public job-posting feeds from each employer's own careers site. Apply links go to the employer."
 }
