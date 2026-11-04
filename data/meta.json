@@ -1,26 +1,26 @@
 {
- "updated_at": "2026-11-03T12:02:14+00:00",
- "total_jobs": 1900,
+ "updated_at": "2026-11-04T12:02:07+00:00",
+ "total_jobs": 1889,
  "employers": [
   {
    "employer": "C.H. Robinson",
    "segment": "3PL / broker",
    "ats": "workday",
    "ok": true,
-   "reported_total": 158,
-   "fetched": 158,
-   "listed": 106,
+   "reported_total": 160,
+   "fetched": 160,
+   "listed": 110,
    "duplicates_removed": 3,
-   "non_us_removed": 48
+   "non_us_removed": 47
   },
   {
    "employer": "RXO",
    "segment": "broker / managed transportation",
    "ats": "workday",
    "ok": true,
-   "reported_total": 342,
-   "fetched": 342,
-   "listed": 250,
+   "reported_total": 343,
+   "fetched": 343,
+   "listed": 251,
    "duplicates_removed": 70,
    "non_us_removed": 22
   },
@@ -29,21 +29,21 @@
    "segment": "carrier / intermodal / brokerage",
    "ats": "workday",
    "ok": true,
-   "reported_total": 456,
-   "fetched": 456,
-   "listed": 403,
-   "duplicates_removed": 48,
-   "non_us_removed": 5
+   "reported_total": 448,
+   "fetched": 448,
+   "listed": 396,
+   "duplicates_removed": 49,
+   "non_us_removed": 3
   },
   {
    "employer": "Werner Enterprises",
    "segment": "truckload carrier",
    "ats": "workday",
    "ok": true,
-   "reported_total": 122,
-   "fetched": 122,
-   "listed": 112,
-   "duplicates_removed": 10,
+   "reported_total": 123,
+   "fetched": 123,
+   "listed": 114,
+   "duplicates_removed": 9,
    "non_us_removed": 0
   },
   {
@@ -51,10 +51,10 @@
    "segment": "LTL carrier",
    "ats": "workday",
    "ok": true,
-   "reported_total": 199,
-   "fetched": 199,
-   "listed": 196,
-   "duplicates_removed": 3,
+   "reported_total": 205,
+   "fetched": 205,
+   "listed": 201,
+   "duplicates_removed": 4,
    "non_us_removed": 0
   },
   {
@@ -62,11 +62,11 @@
    "segment": "fleet / dedicated / supply chain",
    "ats": "workday",
    "ok": true,
-   "reported_total": 425,
-   "fetched": 425,
-   "listed": 326,
-   "duplicates_removed": 21,
-   "non_us_removed": 78
+   "reported_total": 414,
+   "fetched": 414,
+   "listed": 319,
+   "duplicates_removed": 22,
+   "non_us_removed": 73
   },
   {
    "employer": "Triumph Financial",
@@ -84,31 +84,31 @@
    "segment": "digital broker / freight tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 96,
-   "fetched": 96,
-   "listed": 67,
+   "reported_total": 97,
+   "fetched": 97,
+   "listed": 65,
    "duplicates_removed": 0,
-   "non_us_removed": 29
+   "non_us_removed": 32
   },
   {
    "employer": "Flexport",
    "segment": "freight forwarder / freight tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 192,
-   "fetched": 192,
-   "listed": 70,
+   "reported_total": 189,
+   "fetched": 189,
+   "listed": 71,
    "duplicates_removed": 1,
-   "non_us_removed": 121
+   "non_us_removed": 117
   },
   {
    "employer": "Motive",
    "segment": "fleet tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 173,
-   "fetched": 173,
-   "listed": 77,
+   "reported_total": 172,
+   "fetched": 172,
+   "listed": 76,
    "duplicates_removed": 4,
    "non_us_removed": 92
   },
@@ -139,33 +139,33 @@
    "segment": "fleet tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 331,
-   "fetched": 331,
-   "listed": 216,
-   "duplicates_removed": 22,
-   "non_us_removed": 93
+   "reported_total": 324,
+   "fetched": 324,
+   "listed": 211,
+   "duplicates_removed": 21,
+   "non_us_removed": 92
   },
   {
    "employer": "Arrive Logistics",
    "segment": "broker",
    "ats": "lever",
    "ok": true,
-   "reported_total": 55,
-   "fetched": 55,
-   "listed": 46,
+   "reported_total": 52,
+   "fetched": 52,
+   "listed": 45,
    "duplicates_removed": 0,
-   "non_us_removed": 9
+   "non_us_removed": 7
   },
   {
    "employer": "Loadsmart",
    "segment": "digital broker / freight tech",
    "ats": "lever",
    "ok": true,
-   "reported_total": 11,
-   "fetched": 11,
-   "listed": 5,
+   "reported_total": 8,
+   "fetched": 8,
+   "listed": 4,
    "duplicates_removed": 0,
-   "non_us_removed": 6
+   "non_us_removed": 4
   },
   {
    "employer": "Flock Freight",
@@ -180,14 +180,14 @@
   }
  ],
  "categories": {
-  "management": 447,
-  "dispatch_operations": 236,
-  "brokerage_sales": 397,
-  "warehouse_dock": 114,
-  "other": 226,
-  "tech_data": 167,
+  "dispatch_operations": 237,
+  "brokerage_sales": 389,
+  "management": 441,
+  "other": 234,
+  "tech_data": 164,
+  "warehouse_dock": 110,
   "maintenance_technician": 235,
-  "driving_cdl": 78
+  "driving_cdl": 79
  },
  "category_labels": {
   "driving_cdl": "Driving / CDL",
@@ -199,8 +199,8 @@
   "management": "Management",
   "other": "Other"
  },
- "cdl_jobs": 68,
- "remote_jobs": 285,
+ "cdl_jobs": 69,
+ "remote_jobs": 280,
  "feeds_failed": 0,
  "source_note": "Public job-posting feeds from each employer's own careers site. Apply links go to the employer."
 }
