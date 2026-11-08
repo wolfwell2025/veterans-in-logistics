@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T12:02:06+00:00",
+ "updated_at": "2026-11-08T12:03:56+00:00",
  "total_jobs": 1897,
  "employers": [
   {
@@ -29,9 +29,9 @@
    "segment": "carrier / intermodal / brokerage",
    "ats": "workday",
    "ok": true,
-   "reported_total": 448,
-   "fetched": 448,
-   "listed": 396,
+   "reported_total": 447,
+   "fetched": 447,
+   "listed": 395,
    "duplicates_removed": 50,
    "non_us_removed": 2
   },
@@ -84,9 +84,9 @@
    "segment": "digital broker / freight tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 99,
-   "fetched": 99,
-   "listed": 67,
+   "reported_total": 100,
+   "fetched": 100,
+   "listed": 68,
    "duplicates_removed": 0,
    "non_us_removed": 32
   },
@@ -139,11 +139,11 @@
    "segment": "fleet tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 315,
-   "fetched": 315,
+   "reported_total": 316,
+   "fetched": 316,
    "listed": 200,
    "duplicates_removed": 16,
-   "non_us_removed": 99
+   "non_us_removed": 100
   },
   {
    "employer": "Arrive Logistics",
@@ -180,10 +180,10 @@
   }
  ],
  "categories": {
-  "tech_data": 172,
+  "tech_data": 173,
   "management": 457,
   "other": 232,
-  "dispatch_operations": 233,
+  "dispatch_operations": 232,
   "warehouse_dock": 119,
   "brokerage_sales": 391,
   "maintenance_technician": 219,
