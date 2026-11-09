@@ -1,26 +1,26 @@
 {
- "updated_at": "2026-11-08T12:03:56+00:00",
- "total_jobs": 1897,
+ "updated_at": "2026-11-09T12:02:27+00:00",
+ "total_jobs": 1893,
  "employers": [
   {
    "employer": "C.H. Robinson",
    "segment": "3PL / broker",
    "ats": "workday",
    "ok": true,
-   "reported_total": 147,
-   "fetched": 147,
+   "reported_total": 148,
+   "fetched": 148,
    "listed": 104,
    "duplicates_removed": 3,
-   "non_us_removed": 40
+   "non_us_removed": 41
   },
   {
    "employer": "RXO",
    "segment": "broker / managed transportation",
    "ats": "workday",
    "ok": true,
-   "reported_total": 353,
-   "fetched": 353,
-   "listed": 257,
+   "reported_total": 352,
+   "fetched": 352,
+   "listed": 256,
    "duplicates_removed": 72,
    "non_us_removed": 24
   },
@@ -29,9 +29,9 @@
    "segment": "carrier / intermodal / brokerage",
    "ats": "workday",
    "ok": true,
-   "reported_total": 447,
-   "fetched": 447,
-   "listed": 395,
+   "reported_total": 446,
+   "fetched": 446,
+   "listed": 394,
    "duplicates_removed": 50,
    "non_us_removed": 2
   },
@@ -40,10 +40,10 @@
    "segment": "truckload carrier",
    "ats": "workday",
    "ok": true,
-   "reported_total": 123,
-   "fetched": 123,
+   "reported_total": 122,
+   "fetched": 122,
    "listed": 113,
-   "duplicates_removed": 10,
+   "duplicates_removed": 9,
    "non_us_removed": 0
   },
   {
@@ -51,9 +51,9 @@
    "segment": "LTL carrier",
    "ats": "workday",
    "ok": true,
-   "reported_total": 202,
-   "fetched": 202,
-   "listed": 199,
+   "reported_total": 200,
+   "fetched": 200,
+   "listed": 197,
    "duplicates_removed": 3,
    "non_us_removed": 0
   },
@@ -95,11 +95,11 @@
    "segment": "freight forwarder / freight tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 190,
-   "fetched": 190,
+   "reported_total": 186,
+   "fetched": 186,
    "listed": 69,
    "duplicates_removed": 1,
-   "non_us_removed": 120
+   "non_us_removed": 116
   },
   {
    "employer": "Motive",
@@ -139,11 +139,11 @@
    "segment": "fleet tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 316,
-   "fetched": 316,
+   "reported_total": 315,
+   "fetched": 315,
    "listed": 200,
    "duplicates_removed": 16,
-   "non_us_removed": 100
+   "non_us_removed": 99
   },
   {
    "employer": "Arrive Logistics",
@@ -180,14 +180,14 @@
   }
  ],
  "categories": {
+  "warehouse_dock": 118,
   "tech_data": 173,
   "management": 457,
-  "other": 232,
-  "dispatch_operations": 232,
-  "warehouse_dock": 119,
+  "other": 231,
+  "dispatch_operations": 231,
   "brokerage_sales": 391,
   "maintenance_technician": 219,
-  "driving_cdl": 74
+  "driving_cdl": 73
  },
  "category_labels": {
   "driving_cdl": "Driving / CDL",
@@ -199,7 +199,7 @@
   "management": "Management",
   "other": "Other"
  },
- "cdl_jobs": 63,
+ "cdl_jobs": 62,
  "remote_jobs": 274,
  "feeds_failed": 0,
  "source_note": "Public job-posting feeds from each employer's own careers site. Apply links go to the employer."
