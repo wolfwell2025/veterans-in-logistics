@@ -1,17 +1,17 @@
 {
- "updated_at": "2026-11-15T11:45:48+00:00",
- "total_jobs": 1908,
+ "updated_at": "2026-11-16T11:48:33+00:00",
+ "total_jobs": 1906,
  "employers": [
   {
    "employer": "C.H. Robinson",
    "segment": "3PL / broker",
    "ats": "workday",
    "ok": true,
-   "reported_total": 166,
-   "fetched": 166,
+   "reported_total": 164,
+   "fetched": 164,
    "listed": 116,
    "duplicates_removed": 1,
-   "non_us_removed": 49
+   "non_us_removed": 47
   },
   {
    "employer": "RXO",
@@ -28,45 +28,39 @@
    "employer": "J.B. Hunt",
    "segment": "carrier / intermodal / brokerage",
    "ats": "workday",
-   "ok": true,
-   "reported_total": 436,
-   "fetched": 436,
+   "ok": false,
+   "error": "HTTP Error 429: Too Many Requests",
    "listed": 388,
-   "duplicates_removed": 47,
-   "non_us_removed": 1
+   "carried_over": true
   },
   {
    "employer": "Werner Enterprises",
    "segment": "truckload carrier",
    "ats": "workday",
-   "ok": true,
-   "reported_total": 120,
-   "fetched": 120,
+   "ok": false,
+   "error": "HTTP Error 429: Too Many Requests",
    "listed": 111,
-   "duplicates_removed": 9,
-   "non_us_removed": 0
+   "carried_over": true
   },
   {
    "employer": "Old Dominion Freight Line",
    "segment": "LTL carrier",
    "ats": "workday",
-   "ok": true,
-   "reported_total": 200,
-   "fetched": 200,
+   "ok": false,
+   "error": "HTTP Error 429: Too Many Requests",
    "listed": 198,
-   "duplicates_removed": 2,
-   "non_us_removed": 0
+   "carried_over": true
   },
   {
    "employer": "Ryder",
    "segment": "fleet / dedicated / supply chain",
    "ats": "workday",
    "ok": true,
-   "reported_total": 418,
-   "fetched": 418,
-   "listed": 324,
+   "reported_total": 416,
+   "fetched": 416,
+   "listed": 323,
    "duplicates_removed": 18,
-   "non_us_removed": 76
+   "non_us_removed": 75
   },
   {
    "employer": "Triumph Financial",
@@ -95,22 +89,22 @@
    "segment": "freight forwarder / freight tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 204,
-   "fetched": 204,
+   "reported_total": 205,
+   "fetched": 205,
    "listed": 77,
    "duplicates_removed": 2,
-   "non_us_removed": 125
+   "non_us_removed": 126
   },
   {
    "employer": "Motive",
    "segment": "fleet tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 182,
-   "fetched": 182,
+   "reported_total": 181,
+   "fetched": 181,
    "listed": 84,
    "duplicates_removed": 4,
-   "non_us_removed": 94
+   "non_us_removed": 93
   },
   {
    "employer": "project44",
@@ -128,20 +122,20 @@
    "segment": "freight visibility tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 12,
-   "fetched": 12,
+   "reported_total": 13,
+   "fetched": 13,
    "listed": 8,
    "duplicates_removed": 0,
-   "non_us_removed": 4
+   "non_us_removed": 5
   },
   {
    "employer": "Samsara",
    "segment": "fleet tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 319,
-   "fetched": 319,
-   "listed": 201,
+   "reported_total": 318,
+   "fetched": 318,
+   "listed": 200,
    "duplicates_removed": 16,
    "non_us_removed": 102
   },
@@ -180,12 +174,12 @@
   }
  ],
  "categories": {
+  "other": 243,
   "tech_data": 177,
-  "other": 242,
-  "brokerage_sales": 395,
-  "management": 451,
+  "brokerage_sales": 394,
+  "management": 450,
   "dispatch_operations": 232,
-  "warehouse_dock": 113,
+  "warehouse_dock": 112,
   "driving_cdl": 74,
   "maintenance_technician": 224
  },
@@ -201,6 +195,6 @@
  },
  "cdl_jobs": 68,
  "remote_jobs": 275,
- "feeds_failed": 0,
+ "feeds_failed": 3,
  "source_note": "Public job-posting feeds from each employer's own careers site. Apply links go to the employer."
 }
