@@ -14,6 +14,11 @@ LOG="$LOG_DIR/refresh-$(date +%Y%m%d-%H%M).log"
 exec > >(tee -a "$LOG") 2>&1
 
 echo "== $(date) refresh start"
+# git's GitHub credential helper is set to /usr/bin/gh. After a box reset the
+# binary may only exist at /usr/local/bin/gh, which breaks pull and push.
+if [[ ! -x /usr/bin/gh ]] && [[ -x /usr/local/bin/gh ]]; then
+  sudo ln -sf /usr/local/bin/gh /usr/bin/gh || echo "warning: could not restore /usr/bin/gh symlink"
+fi
 cd "$REPO"
 git pull --rebase --autostash origin main || echo "warning: git pull failed, continuing with local copy"
 
