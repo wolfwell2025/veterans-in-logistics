@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-11-21T11:55:00+00:00",
- "total_jobs": 1861,
+ "updated_at": "2026-11-22T11:50:54+00:00",
+ "total_jobs": 1860,
  "employers": [
   {
    "employer": "C.H. Robinson",
@@ -29,9 +29,9 @@
    "segment": "carrier / intermodal / brokerage",
    "ats": "workday",
    "ok": true,
-   "reported_total": 425,
-   "fetched": 425,
-   "listed": 372,
+   "reported_total": 424,
+   "fetched": 424,
+   "listed": 371,
    "duplicates_removed": 52,
    "non_us_removed": 1
   },
@@ -62,11 +62,11 @@
    "segment": "fleet / dedicated / supply chain",
    "ats": "workday",
    "ok": true,
-   "reported_total": 428,
-   "fetched": 428,
+   "reported_total": 427,
+   "fetched": 427,
    "listed": 336,
    "duplicates_removed": 17,
-   "non_us_removed": 75
+   "non_us_removed": 74
   },
   {
    "employer": "Triumph Financial",
@@ -117,11 +117,11 @@
    "segment": "freight visibility tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 16,
-   "fetched": 16,
+   "reported_total": 15,
+   "fetched": 15,
    "listed": 5,
    "duplicates_removed": 0,
-   "non_us_removed": 11
+   "non_us_removed": 10
   },
   {
    "employer": "FourKites",
@@ -139,11 +139,11 @@
    "segment": "fleet tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 288,
-   "fetched": 288,
+   "reported_total": 299,
+   "fetched": 299,
    "listed": 179,
    "duplicates_removed": 15,
-   "non_us_removed": 94
+   "non_us_removed": 105
   },
   {
    "employer": "Arrive Logistics",
@@ -183,7 +183,7 @@
   "tech_data": 164,
   "other": 232,
   "dispatch_operations": 211,
-  "management": 463,
+  "management": 462,
   "brokerage_sales": 392,
   "warehouse_dock": 112,
   "maintenance_technician": 225,
