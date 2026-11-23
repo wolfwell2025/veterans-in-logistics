@@ -1,17 +1,17 @@
 {
- "updated_at": "2026-11-22T11:50:54+00:00",
- "total_jobs": 1860,
+ "updated_at": "2026-11-23T11:49:26+00:00",
+ "total_jobs": 1855,
  "employers": [
   {
    "employer": "C.H. Robinson",
    "segment": "3PL / broker",
    "ats": "workday",
    "ok": true,
-   "reported_total": 163,
-   "fetched": 163,
-   "listed": 118,
+   "reported_total": 165,
+   "fetched": 165,
+   "listed": 119,
    "duplicates_removed": 2,
-   "non_us_removed": 43
+   "non_us_removed": 44
   },
   {
    "employer": "RXO",
@@ -51,9 +51,9 @@
    "segment": "LTL carrier",
    "ats": "workday",
    "ok": true,
-   "reported_total": 189,
-   "fetched": 189,
-   "listed": 187,
+   "reported_total": 186,
+   "fetched": 186,
+   "listed": 184,
    "duplicates_removed": 2,
    "non_us_removed": 0
   },
@@ -62,10 +62,10 @@
    "segment": "fleet / dedicated / supply chain",
    "ats": "workday",
    "ok": true,
-   "reported_total": 427,
-   "fetched": 427,
-   "listed": 336,
-   "duplicates_removed": 17,
+   "reported_total": 423,
+   "fetched": 423,
+   "listed": 333,
+   "duplicates_removed": 16,
    "non_us_removed": 74
   },
   {
@@ -95,11 +95,11 @@
    "segment": "freight forwarder / freight tech",
    "ats": "greenhouse",
    "ok": true,
-   "reported_total": 212,
-   "fetched": 212,
+   "reported_total": 210,
+   "fetched": 210,
    "listed": 76,
    "duplicates_removed": 2,
-   "non_us_removed": 134
+   "non_us_removed": 132
   },
   {
    "employer": "Motive",
@@ -180,14 +180,14 @@
   }
  ],
  "categories": {
-  "tech_data": 164,
-  "other": 232,
-  "dispatch_operations": 211,
-  "management": 462,
+  "tech_data": 165,
+  "other": 231,
+  "dispatch_operations": 210,
+  "management": 459,
   "brokerage_sales": 392,
   "warehouse_dock": 112,
   "maintenance_technician": 225,
-  "driving_cdl": 62
+  "driving_cdl": 61
  },
  "category_labels": {
   "driving_cdl": "Driving / CDL",
@@ -199,8 +199,8 @@
   "management": "Management",
   "other": "Other"
  },
- "cdl_jobs": 57,
- "remote_jobs": 260,
+ "cdl_jobs": 56,
+ "remote_jobs": 261,
  "feeds_failed": 0,
  "source_note": "Public job-posting feeds from each employer's own careers site. Apply links go to the employer."
 }
